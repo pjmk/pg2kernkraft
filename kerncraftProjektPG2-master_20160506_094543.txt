@@ -1,0 +1,3 @@
+ERROR - 09:45:43: java.net.MalformedURLException: unknown protocol: pathmap
+WARNING - 09:46:52: Convert kerncraftProjektPG2-master
+ERROR - 09:46:52: java.net.MalformedURLException: unknown protocol: pathmap

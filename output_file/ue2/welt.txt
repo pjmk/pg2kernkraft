@@ -1,0 +1,21 @@
+WORLD:Welt
+BIOME:Biom1;NATURE:Meadows
+VILLAGE:Kerningen;NUMHOUSES:2;MAYOR:Fritz Obermotz
+VILLAGER:Alma Suppenkopf;GENDER:female;AGE:35
+VILLAGER:Felix Suppenkopf;GENDER:male;AGE:11
+VILLAGER:Paul Hinterseer;GENDER:male;AGE:28
+VILLAGER:Janina Sommer;GENDER:female;AGE:23
+VILLAGER:Fritz Obermotz;GENDER:male;AGE:56
+VILLAGE:Jobstingen;NUMHOUSES:2;MAYOR:Franz der Kaiser
+VILLAGER:Dieter Knodel;GENDER:male;AGE:87
+VILLAGER:Annemie Knodel;GENDER:female;AGE:83
+VILLAGER:Rudolf Suppenkopf;GENDER:male;AGE:36
+VILLAGER:Alma Injuenger;GENDER:female;AGE:19
+VILLAGER:Luca Injuenger;GENDER:male;AGE:1
+VILLAGER:Franz der Kaiser;GENDER:male;AGE:70
+BIOME:Biom2;NATURE:Jungle
+VILLAGE:Tukumullu;NUMHOUSES:1;MAYOR:Akina Uballa
+VILLAGER:Rumsa Uballa;GENDER:male;AGE:45
+VILLAGER:Akina Uballa;GENDER:female;AGE:37
+VILLAGER:Rantuna Uballa;GENDER:female;AGE:16
+BIOME:Biom3;NATURE:Desert
