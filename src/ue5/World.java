@@ -1,5 +1,8 @@
 package ue5;
 
+import java.util.Iterator;
+import java.util.NoSuchElementException;
+
 /**
 *
 * This class provides a "World", which can store multiple numbers of Biomes.
@@ -9,10 +12,14 @@ package ue5;
 *
 */
 
-public class World {
+public class World implements Iterator<Biome> {
 	private static final int MAX_NUM_BIOMES = 5;
 	private String name;
 	private Biome[][] biome;
+	
+	//For Iterator Implementation
+	private int xIndex = 0;
+	private int yIndex = 0;
 
 	/**
 	 * Generates new World.
@@ -144,6 +151,56 @@ public class World {
 			}
 		}
 		return null;
+	}
+
+	/**
+	 * Checks if there is another Biome after the index or not.
+	 * @return whether there is another Biome after the index or not as boolean
+	 */
+	@Override
+	public boolean hasNext() {
+		if (xIndex == MAX_NUM_BIOMES - 1 && yIndex == MAX_NUM_BIOMES - 1) {
+			return false;
+		}
+		if (yIndex < 4) { 
+			if (biome[xIndex][yIndex + 1] == null) {
+				return false;
+			}
+		} else {
+			if (biome[xIndex + 1][0] == null) {
+				return false;
+			}
+		}
+		return true;
+	}
+	
+	/**
+	 * Returns next Biome object, if there is one. 
+	 * Additionally it increments index.
+	 * @return Biome object, that is next
+	 */
+	@Override
+	public Biome next() {
+		if (hasNext()) {
+			if (yIndex < 4) { 
+				return biome[xIndex][yIndex + 1];
+			} else {
+				return biome[xIndex + 1][0];
+			}
+		} else {
+			throw new NoSuchElementException("No further biome in array at position: biome[" + xIndex + "]" + "[" + yIndex + "]");
+		}
+	}
+	
+	/**
+	 * Removes Biome from current Index.
+	 */
+	@Override
+	public void remove() {
+		if (xIndex > 4 || yIndex > 4) {
+            throw new IllegalStateException("You can't delete element before first next() method call");
+        }
+		biome[xIndex][yIndex] = null;
 	}
 	
 }
