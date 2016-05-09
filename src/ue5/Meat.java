@@ -1,5 +1,15 @@
 package ue5;
 
+/**
+*
+* The class Meat is described by type, daysTillSpoil and weight.
+* It is returned, if a Animal is slaughtered.
+*
+* @author Paul Jureschek, Michael Kinzkofer
+*
+*/
+
+
 public class Meat {
 	private int meatWeight;
 	private int daysTillSpoil;

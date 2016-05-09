@@ -9,8 +9,19 @@ package ue5;
  */
 
 public enum AnimalEnum {
-	WOLF,
-	COW,
-	CHICKEN,
-	CAMEL;
+	WOLF(80),
+	COW(1100),
+	CHICKEN(1),
+	CAMEL(600);
+	
+	private int maxWeight;
+	
+	AnimalEnum(int maxWeight) {
+		this.maxWeight = maxWeight;
+	}
+
+	public int getMaxWeight() {
+		return maxWeight;
+	}
+
 }

@@ -9,6 +9,7 @@ package ue5;
 public abstract class Animal {
 	private Color color;
 	private int age;
+	private int maxWeight;
 	
 	/**
 	 * Generates Animal object.
@@ -49,11 +50,11 @@ public abstract class Animal {
 		this.age = age;
 	}
 
-
 	/**
 	 * Abstract method. Implemented in Subclasses.
 	 * Used to perform the typical animal action.
 	 */
+	
 	abstract public void performAction();
 
 	/**
@@ -70,5 +71,23 @@ public abstract class Animal {
 	 */
 	public int getAge() {
 		return age;
+	}
+
+	/**
+	 * Get the max weight of the animal.
+	 * @return max weight of the animal
+	 */
+	
+	public int getMaxWeight() {
+		return maxWeight;
+	}
+
+	/**
+	 * Set the max weight of the animal.
+	 * @param maxWeight max weight of the animal
+	 */
+	
+	protected void setMaxWeight(int maxWeight) {
+		this.maxWeight = maxWeight;
 	} 
 }

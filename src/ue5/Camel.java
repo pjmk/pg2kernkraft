@@ -20,6 +20,8 @@ public class Camel extends WildAnimal {
 	 */
 	public Camel(Color color, int age, String id, Biome currBiome, Nature pref) {
 		super(color, age, id, pref, currBiome);
+		// set the typical max weight ( which is saved in AnimalEnum) 
+		this.setMaxWeight(AnimalEnum.CAMEL.getMaxWeight());
 	}
 	
 	
@@ -48,6 +50,8 @@ public class Camel extends WildAnimal {
 		}
 		// Add Camel to Biom:
 		super.getCurrBiome().addWildAnimal(this);
+		// set the typical max weight ( which is saved in AnimalEnum) 
+		this.setMaxWeight(AnimalEnum.CAMEL.getMaxWeight());
 	}
 	
 
@@ -65,5 +69,8 @@ public class Camel extends WildAnimal {
 		+ ";ANIMALAGE:" + this.getAge() + ";FAVNATURE:" + WorldUtilities.convertUpper(this.getPreferedNature().toString())
 		+ ";CURRBIOME:" + this.getCurrBiome().getName();
 	}
+
+
+
 
 }

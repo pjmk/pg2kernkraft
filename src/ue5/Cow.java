@@ -19,6 +19,8 @@ public class Cow extends Pet {
 	 */
 	public Cow(Color color, int age, String name, Villager owner) {
 		super(color, age, name, owner);
+		// set the typical max weight ( which is saved in AnimalEnum) 
+		this.setMaxWeight(AnimalEnum.COW.getMaxWeight());
 		
 	}
 	
@@ -45,6 +47,8 @@ public class Cow extends Pet {
 		}
 		// Add Cow to Villager
 		this.getOwner().addPet(this);
+		// set the typical max weight ( which is saved in AnimalEnum) 
+		this.setMaxWeight(AnimalEnum.CAMEL.getMaxWeight());
 	}
 
 	/**

@@ -26,7 +26,8 @@ public class Chicken extends Pet {
 		
 		this.isCackling = isCackling;
 		this.eggsLaid = eggsLaid;
-		
+		// set the typical max weight ( which is saved in AnimalEnum) 
+		this.setMaxWeight(AnimalEnum.CHICKEN.getMaxWeight());
 	}
 	
 	
@@ -57,6 +58,8 @@ public class Chicken extends Pet {
 		}
 		// Add Chicken to Villager
 		this.getOwner().addPet(this);
+		// set the typical max weight ( which is saved in AnimalEnum) 
+		this.setMaxWeight(AnimalEnum.CHICKEN.getMaxWeight());
 	}
 	
 	/**

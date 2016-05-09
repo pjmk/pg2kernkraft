@@ -41,6 +41,8 @@ public class Wolf extends WildAnimal {
 		}
 		// Add Wolf to Biom:
 		super.getCurrBiome().addWildAnimal(this);
+		// set the typical max weight ( which is saved in AnimalEnum) 
+		this.setMaxWeight(AnimalEnum.WOLF.getMaxWeight());
 	}
 	
 	/**
@@ -57,6 +59,8 @@ public class Wolf extends WildAnimal {
 		super(color, age, id, pref, currBiome);
 		
 		this.isRaging = isRaging;
+		// set the typical max weight ( which is saved in AnimalEnum) 
+		this.setMaxWeight(AnimalEnum.WOLF.getMaxWeight());
 	}
 
 	/**
