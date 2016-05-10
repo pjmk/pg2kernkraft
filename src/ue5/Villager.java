@@ -199,5 +199,4 @@ public class Villager implements IMovable, Comparator<Villager>{
 			return -1;
 	}
 	
-
 }

@@ -21,6 +21,15 @@ public class KernTest_ue5 {
 		System.out.println("\n" + world.getBiome()[0][0].getVillage()[1].getVillager()[0].getPets()[0].toString());
 		System.out.println(meat.toString());
 		System.out.println(AnimalEnum.WOLF.getMaxWeight());
+		
+		while (world.hasNext()) {
+			biome = world.next();
+			while (biome.hasNext()) {
+				Village village = biome.next();
+				System.out.println(village + " POPULATION: " + Integer.toString(village.getPopulation()) + " " + biome);
+			}
+					
+		}
 	}
 	
 }
