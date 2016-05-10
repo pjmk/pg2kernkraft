@@ -13,7 +13,8 @@ public class Villager implements IMovable{
 	private Profession profession;
 	private Gender gender;
 	private int age, xCoordinate, yCoordinate;
-	private final int MAX_NUM_PETS = 10; //Just used because we don't know dynamic arrays yet
+	private final static int MAX_NUM_PETS = 10; //Just used because we don't know dynamic arrays yet
+
 	private Pet[] pets = new Pet[MAX_NUM_PETS];
 
 	/**
@@ -92,6 +93,15 @@ public class Villager implements IMovable{
 	 */
 	public Pet[] getPets() {
 		return pets;
+	}
+	
+	/**
+	 * Returns max number of pets.
+	 * @return max number of pets
+	 */
+	
+	public static int getMAX_NUM_PETS() {
+		return MAX_NUM_PETS;
 	}
 
 	/**

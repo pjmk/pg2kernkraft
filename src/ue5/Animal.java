@@ -94,4 +94,45 @@ public abstract class Animal implements IMovable{
 	protected void setMaxWeight(int maxWeight) {
 		this.maxWeight = maxWeight;
 	} 
+	
+	/**
+	 *  set the coordinates of the Animal.
+	 *  @param xCoordinate x-coordinate of the villager in the biome
+	 *  @param yCoordinate y-coordinate of the villager in the biome
+	 */
+	
+	public void setCoordinates(int xCoordinate, int yCoordinate) {
+		this.xCoordinate = xCoordinate;
+		this.yCoordinate = yCoordinate;
+	}
+
+	/**
+	 * Generates random coordinates and log the coordinates
+	 *  of the Animal to the console
+	 */
+	
+	public void setCoordinates() {
+		this.xCoordinate = (int) (100 * Math.random());
+		this.yCoordinate = (int) (100 * Math.random());
+		logCoordinates();
+	}
+
+	/**
+	 * Returns x-coordinate of the Animal.
+	 * @return x-coordinate of the Animal
+	 */
+	
+	public int getXCoordinate() {
+		return xCoordinate;
+	}
+	
+	/**
+	 * Returns y-coordinate of the Animal.
+	 * @return y-coordinate of the Animal
+	 */
+	
+	public int getYCoordinate() {
+		return yCoordinate;
+	}
+	
 }

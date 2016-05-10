@@ -213,7 +213,7 @@ public class WorldUtilities {
 							// loop for pets[] array
 							for(int h = 0; h < villager.getPets().length; h++) {
 								if (villager.getPets()[h] == null) {
-									break;
+									continue;
 								}
 								
 								writer.newLine();

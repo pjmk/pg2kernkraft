@@ -102,35 +102,6 @@ public class Wolf extends WildAnimal {
 	}
 
 	/**
-	 * Generates random coordinates and log the coordinates of the 
-	 *  Wolf to the console
-	 */
-	@Override
-	public void setCoordinates() {
-		this.xCoordinate = (int) (100 * Math.random());
-		this.yCoordinate = (int) (100 * Math.random());
-		logCoordinates();
-	}
-
-	/**
-	 * Returns x-coordinate of the Wolf.
-	 * @return x-coordinate of the Wolf
-	 */
-	@Override
-	public int getXCoordinate() {
-		return xCoordinate;
-	}
-	
-	/**
-	 * Returns y-coordinate of the Wolf.
-	 * @return y-coordinate of the Wolf
-	 */
-	@Override
-	public int getYCoordinate() {
-		return yCoordinate;
-	}
-
-	/**
 	 * log the Wolf coordinates to the console
 	 */
 	@Override
