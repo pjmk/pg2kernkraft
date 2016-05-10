@@ -174,10 +174,11 @@ public class Biome implements Iterator<Village>{
 	 */
 	@Override
 	public boolean hasNext() {
-		if (village[index + 1] == null || village.length - 1 == index) {
+		if (village[index] == null || village.length == index) {
 			return false;
+		} else {
+			return true;
 		}
-		return true;
 	}
 	
 	/**
@@ -187,9 +188,10 @@ public class Biome implements Iterator<Village>{
 	 */
 	@Override
 	public Village next() {
+		int oldIndex = index;
 		if (hasNext()) {
 			index++;
-			return village[index];
+			return village[oldIndex];
 		} else {
 			throw new NoSuchElementException("No further village in array at position: village[" + index + "]");
 		}

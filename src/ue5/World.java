@@ -187,40 +187,36 @@ public class World implements Iterator<Biome> {
 	 */
 	@Override
 	public boolean hasNext() {
-		if (xIndex == MAX_NUM_BIOMES - 1 && yIndex == MAX_NUM_BIOMES - 1) {
+		if (xIndex == MAX_NUM_BIOMES && yIndex == MAX_NUM_BIOMES) {
 			return false;
 		}
-		if (yIndex < MAX_NUM_BIOMES - 1) { 
-			if (biome[xIndex][yIndex + 1] == null) {
-				return false;
-			}
-		} else {
-			if (biome[xIndex + 1][0] == null) {
-				return false;
-			}
+		if (biome[xIndex][yIndex] == null) {
+			return false;
+
 		}
 		return true;
 	}
 	
 	/**
-	 * Returns next Biome object, if there is one. 
-	 * Additionally it increments index.
+	 * Returns Biome object, at current Index. 
+	 * Additionally it increments index if hasNext() is true.
 	 * @return Biome object, that is next
 	 */
 	@Override
 	public Biome next() {
+		int oldYIndex = yIndex;
+		int oldXIndex = xIndex;
 		if (hasNext()) {
 			if (yIndex < MAX_NUM_BIOMES - 1) { 
 				yIndex++;
-				return biome[xIndex][yIndex];
 			} else {
 				xIndex++;
 				yIndex = 0;
-				return biome[xIndex][yIndex];
 			}
 		} else {
-			throw new NoSuchElementException("No further biome in array at position: biome[" + xIndex + "]" + "[" + yIndex + "]");
+			throw new NoSuchElementException("No biome in array at position: biome[" + xIndex + "]" + "[" + yIndex + "]");
 		}
+		return biome[oldXIndex][oldYIndex];
 	}
 }
 
