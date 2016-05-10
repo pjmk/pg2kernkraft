@@ -102,7 +102,7 @@ public class World implements Iterator<Biome> {
 	}
 
 	/**
-	 * Set the array biomes
+	 * Set the array biomes.
 	 * @param biome Biome[] array
 	 */
 	
@@ -190,7 +190,7 @@ public class World implements Iterator<Biome> {
 		if (xIndex == MAX_NUM_BIOMES - 1 && yIndex == MAX_NUM_BIOMES - 1) {
 			return false;
 		}
-		if (yIndex < 4) { 
+		if (yIndex < MAX_NUM_BIOMES - 1) { 
 			if (biome[xIndex][yIndex + 1] == null) {
 				return false;
 			}
@@ -210,27 +210,18 @@ public class World implements Iterator<Biome> {
 	@Override
 	public Biome next() {
 		if (hasNext()) {
-			if (yIndex < 4) { 
-				return biome[xIndex][yIndex + 1];
+			if (yIndex < MAX_NUM_BIOMES - 1) { 
+				yIndex++;
+				return biome[xIndex][yIndex];
 			} else {
-				return biome[xIndex + 1][0];
+				xIndex++;
+				yIndex = 0;
+				return biome[xIndex][yIndex];
 			}
 		} else {
 			throw new NoSuchElementException("No further biome in array at position: biome[" + xIndex + "]" + "[" + yIndex + "]");
 		}
 	}
-	
-	/**
-	 * Removes Biome at current Index from Array.
-	 */
-	@Override
-	public void remove() {
-		if (xIndex > 4 || yIndex > 4) {
-            throw new IllegalStateException("You can't delete element before first next() method call");
-        }
-		biome[xIndex][yIndex] = null;
-	}
-	
 }
 
 	

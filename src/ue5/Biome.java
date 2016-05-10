@@ -1,5 +1,8 @@
 package ue5;
 
+import java.util.Iterator;
+import java.util.NoSuchElementException;
+
 /**
 *
 * This class provides a "Biome", which can store multiple numbers of Villages.
@@ -10,7 +13,7 @@ package ue5;
 */
 
 
-public class Biome {
+public class Biome implements Iterator<Village>{
 	private static final int MAX_NUM_VILLAGES = 20;
 	private String name;
 	private Nature nature;
@@ -18,6 +21,8 @@ public class Biome {
 	private Village[] village;
 	private final int MAX_NUM_ANIMALS = 20; // Because we don't know dynamic arrays yet
 	private WildAnimal animals[] = new WildAnimal[MAX_NUM_ANIMALS];
+	
+	private int index = 0; // For Iterator implementation
 	
 	/**
 	 * Generates new Biome.
@@ -140,10 +145,53 @@ public class Biome {
 	}
 
 	/**
+	 * Returns current index used by iterator to iterator over village[].
+	 * @return the current index for iterator
+	 */
+	public int getIndex() {
+		return index;
+	}
+
+	/**
+	 * Sets current index used by iterator to iterator over village[].
+	 * @param index the index for iterator
+	 */
+	public void setIndex(int index) {
+		this.index = index;
+	}
+
+	/**
 	 * Returns animals living on this Biome right now.
 	 * @return animals living on this Biome right now
 	 */
 	public WildAnimal[] getAnimals() {
 		return animals;
-	}	
+	}
+
+	/**
+	 * Checks if there is another Village after the current index or not.
+	 * @return whether there is another Village after the index or not as boolean
+	 */
+	@Override
+	public boolean hasNext() {
+		if (village[index + 1] == null || village.length - 1 == index) {
+			return false;
+		}
+		return true;
+	}
+	
+	/**
+	 * Returns next Village object from village[] after current index, if there is one. 
+	 * Additionally it increments index.
+	 * @return next Village object
+	 */
+	@Override
+	public Village next() {
+		if (hasNext()) {
+			index++;
+			return village[index];
+		} else {
+			throw new NoSuchElementException("No further village in array at position: village[" + index + "]");
+		}
+	}
 }
