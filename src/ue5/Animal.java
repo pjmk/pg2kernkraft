@@ -9,8 +9,8 @@ package ue5;
 public abstract class Animal implements IMovable{
 	private Color color;
 	private int age;
-	protected int xCoordinate;
-	protected int yCoordinate;
+	private int xCoordinate;
+	private int yCoordinate;
 	private int maxWeight;
 	
 	/**

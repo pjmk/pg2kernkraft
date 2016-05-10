@@ -134,7 +134,7 @@ public class Chicken extends Pet {
 	 */
 	@Override
 	public void logCoordinates() {
-		System.out.println("CHICKEN:" + ";X-COORDINATE:" + xCoordinate + ";Y-COORDINATE:" + yCoordinate);	
+		System.out.println("CHICKEN:" + ";X-COORDINATE:" + getXCoordinate() + ";Y-COORDINATE:" + getYCoordinate());	
 	}
 	
 	

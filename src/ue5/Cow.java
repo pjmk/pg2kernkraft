@@ -89,7 +89,7 @@ public class Cow extends Pet {
 	 */
 	@Override
 	public void logCoordinates() {
-		System.out.println("COW:" + "X-COORDINATE:" + xCoordinate + ";Y-COORDINATE:" + yCoordinate);	
+		System.out.println("COW:" + "X-COORDINATE:" + getXCoordinate() + ";Y-COORDINATE:" + getYCoordinate());	
 	}
 	
 	

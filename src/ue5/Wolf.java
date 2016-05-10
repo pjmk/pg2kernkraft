@@ -89,24 +89,13 @@ public class Wolf extends WildAnimal {
 		+ ";CURRBIOME:" + this.getCurrBiome().getName() + ";RAGEMODE:" 
 		+ Boolean.toString(isRaging); 
 	}
-	
-	/**
-	 *  set the coordinates of the Wolf.
-	 *  @param xCoordinate x-coordinate of the villager in the biome
-	 *  @param yCoordinate y-coordinate of the villager in the biome
-	 */
-	@Override
-	public void setCoordinates(int xCoordinate, int yCoordinate) {
-		this.xCoordinate = xCoordinate;
-		this.yCoordinate = yCoordinate;
-	}
 
 	/**
 	 * Log the Wolf coordinates to the console
 	 */
 	@Override
 	public void logCoordinates() {
-		System.out.println("WOLF:" + "X-COORDINATE:" + xCoordinate + ";Y-COORDINATE:" + yCoordinate);	
+		System.out.println("WOLF:" + "X-COORDINATE:" + getXCoordinate() + ";Y-COORDINATE:" + getYCoordinate());	
 	}
 	
 	

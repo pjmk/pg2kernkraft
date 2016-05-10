@@ -74,7 +74,7 @@ public class Camel extends WildAnimal {
 	 */
 	@Override
 	public void logCoordinates() {
-		System.out.println("CAMEL:" +  "X-COORDINATE:" + xCoordinate + ";Y-COORDINATE:" + yCoordinate);	
+		System.out.println("CAMEL:" +  "X-COORDINATE:" + getXCoordinate() + ";Y-COORDINATE:" + getYCoordinate());	
 	}
 	
 
