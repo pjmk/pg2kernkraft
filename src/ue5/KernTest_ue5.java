@@ -1,6 +1,13 @@
 package ue5;
-
 import java.util.ArrayList;
+
+/**
+ * Main for testing current project.
+ * 
+ * @author Paul Jureschek, Michael Kinzkofer
+ *
+ */
+
 
 public class KernTest_ue5 {
 	public static void main(String[] args) {

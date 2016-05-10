@@ -25,7 +25,6 @@ public abstract class Animal implements IMovable{
 	/**
 	 * Constructs Animal Object.
 	 * Animals cannot be less than 0 years old.
-	 * 
 	 * @param color color of Animal
 	 * @param age age of Animal
 	 */

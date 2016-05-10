@@ -2,7 +2,8 @@ package ue5;
 
 /**
  * 
- * Generates a Camel
+ * This class generates a chicken.
+ * It inherits from class Pet. 
  * 
  * @author Paul Jureschek, Michael Kinzkofer
  *
