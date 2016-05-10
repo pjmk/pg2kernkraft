@@ -2,6 +2,7 @@ package ue5;
 
 public class KernTest_ue5 {
 	public static void main(String[] args) {
+		Biome biome;
 
 		
 		WorldUtilities worldutilities = new WorldUtilities();

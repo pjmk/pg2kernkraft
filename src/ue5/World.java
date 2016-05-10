@@ -70,7 +70,39 @@ public class World implements Iterator<Biome> {
 	}
 	
 	/**
-	 * Set the array biomes
+	 * Returns current xIndex used by Iterator implementation.
+	 * @return the xIndex
+	 */
+	public int getxIndex() {
+		return xIndex;
+	}
+
+	/**
+	 * Sets xIndex used by Iterator implementation.
+	 * @param xIndex the xIndex to set
+	 */
+	public void setxIndex(int xIndex) {
+		this.xIndex = xIndex;
+	}
+
+	/**
+	 * Returns current yIndex used by Iterator implementation.
+	 * @return the yIndex
+	 */
+	public int getyIndex() {
+		return yIndex;
+	}
+
+	/**
+	 * Sets yIndex used by Iterator implementation.
+	 * @param yIndex the yIndex to set
+	 */
+	public void setyIndex(int yIndex) {
+		this.yIndex = yIndex;
+	}
+
+	/**
+	 * Set the array biomes.
 	 * @param biome Biome[] array
 	 */
 	
@@ -78,10 +110,6 @@ public class World implements Iterator<Biome> {
 		this.biome = biome;
 		
 	}
-	
-	
-	
-	//METHODS to make finding objects easier:
 	
 	/**
 	 * Returns Biome identified by name string.
@@ -154,55 +182,42 @@ public class World implements Iterator<Biome> {
 	}
 
 	/**
-	 * Checks if there is another Biome after the index or not.
+	 * Checks if there is another Biome after the current index or not.
 	 * @return whether there is another Biome after the index or not as boolean
 	 */
 	@Override
 	public boolean hasNext() {
-		if (xIndex == MAX_NUM_BIOMES - 1 && yIndex == MAX_NUM_BIOMES - 1) {
+		if (xIndex == MAX_NUM_BIOMES && yIndex == MAX_NUM_BIOMES) {
 			return false;
 		}
-		if (yIndex < 4) { 
-			if (biome[xIndex][yIndex + 1] == null) {
-				return false;
-			}
-		} else {
-			if (biome[xIndex + 1][0] == null) {
-				return false;
-			}
+		if (biome[xIndex][yIndex] == null) {
+			return false;
+
 		}
 		return true;
 	}
 	
 	/**
-	 * Returns next Biome object, if there is one. 
-	 * Additionally it increments index.
+	 * Returns Biome object, at current Index. 
+	 * Additionally it increments index if hasNext() is true.
 	 * @return Biome object, that is next
 	 */
 	@Override
 	public Biome next() {
+		int oldYIndex = yIndex;
+		int oldXIndex = xIndex;
 		if (hasNext()) {
-			if (yIndex < 4) { 
-				return biome[xIndex][yIndex + 1];
+			if (yIndex < MAX_NUM_BIOMES - 1) { 
+				yIndex++;
 			} else {
-				return biome[xIndex + 1][0];
+				xIndex++;
+				yIndex = 0;
 			}
 		} else {
-			throw new NoSuchElementException("No further biome in array at position: biome[" + xIndex + "]" + "[" + yIndex + "]");
+			throw new NoSuchElementException("No biome in array at position: biome[" + xIndex + "]" + "[" + yIndex + "]");
 		}
+		return biome[oldXIndex][oldYIndex];
 	}
-	
-	/**
-	 * Removes Biome from current Index.
-	 */
-	@Override
-	public void remove() {
-		if (xIndex > 4 || yIndex > 4) {
-            throw new IllegalStateException("You can't delete element before first next() method call");
-        }
-		biome[xIndex][yIndex] = null;
-	}
-	
 }
 
 	
