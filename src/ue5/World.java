@@ -70,6 +70,38 @@ public class World implements Iterator<Biome> {
 	}
 	
 	/**
+	 * Returns current xIndex used by Iterator implementation.
+	 * @return the xIndex
+	 */
+	public int getxIndex() {
+		return xIndex;
+	}
+
+	/**
+	 * Sets xIndex used by Iterator implementation.
+	 * @param xIndex the xIndex to set
+	 */
+	public void setxIndex(int xIndex) {
+		this.xIndex = xIndex;
+	}
+
+	/**
+	 * Returns current yIndex used by Iterator implementation.
+	 * @return the yIndex
+	 */
+	public int getyIndex() {
+		return yIndex;
+	}
+
+	/**
+	 * Sets yIndex used by Iterator implementation.
+	 * @param yIndex the yIndex to set
+	 */
+	public void setyIndex(int yIndex) {
+		this.yIndex = yIndex;
+	}
+
+	/**
 	 * Set the array biomes
 	 * @param biome Biome[] array
 	 */
@@ -78,10 +110,6 @@ public class World implements Iterator<Biome> {
 		this.biome = biome;
 		
 	}
-	
-	
-	
-	//METHODS to make finding objects easier:
 	
 	/**
 	 * Returns Biome identified by name string.
@@ -154,7 +182,7 @@ public class World implements Iterator<Biome> {
 	}
 
 	/**
-	 * Checks if there is another Biome after the index or not.
+	 * Checks if there is another Biome after the current index or not.
 	 * @return whether there is another Biome after the index or not as boolean
 	 */
 	@Override
@@ -193,7 +221,7 @@ public class World implements Iterator<Biome> {
 	}
 	
 	/**
-	 * Removes Biome from current Index.
+	 * Removes Biome at current Index from Array.
 	 */
 	@Override
 	public void remove() {
