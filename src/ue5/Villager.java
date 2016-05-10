@@ -1,5 +1,7 @@
 package ue5;
 
+import java.util.Comparator;
+
 /**
  * The class Villager describes one Villager.
  * It must have a name, a gender and an age.
@@ -8,13 +10,14 @@ package ue5;
  *
  */
 
-public class Villager implements IMovable{
+public class Villager implements IMovable, Comparator<Villager>{
 	private String name;
 	private Profession profession;
 	private Gender gender;
 	private int age, xCoordinate, yCoordinate;
 	private final static int MAX_NUM_PETS = 10; //Just used because we don't know dynamic arrays yet
-
+	private final int MAX_WEALTH = 1000;
+	private int wealth;
 	private Pet[] pets = new Pet[MAX_NUM_PETS];
 
 	/**
@@ -38,12 +41,11 @@ public class Villager implements IMovable{
 											break;
 			}
 		}
-		// Generates random coordinates and log the villager to the console
+		// Generates random coordinates
 		setCoordinates();
-	}
-	
-	public Profession getProfession() {
-		return profession;
+		
+		//Generate random wealth of Villager
+		setWealth();
 	}
 
 	/**
@@ -62,13 +64,28 @@ public class Villager implements IMovable{
 		
 		//  Generates random coordinates
 		setCoordinates();
+		setWealth();
 	}
 
+	/**
+	 * Returns Villager's profession.
+	 * @return Villager's profession
+	 */
+	public Profession getProfession() {
+		return profession;
+	}
+	
+	/**
+	 * Sets wealth of Villager. Will be a random value between 0 and value of MAX_WEALTH.
+	 */
+	public void setWealth() {
+		wealth = (int) (Math.random() * MAX_WEALTH);
+	}
+	
 	/**
 	 * Return name of Villager.
 	 * @return name of Villager
 	 */
-	
 	public String getName() {
 		return name;
 	}
@@ -126,7 +143,7 @@ public class Villager implements IMovable{
 	}
 
 	/**
-	 * Generates random coordinates and log the villager to the console
+	 * Generates random coordinates and log the villager to the console.
 	 */
 	@Override
 	public void setCoordinates() {
@@ -154,12 +171,38 @@ public class Villager implements IMovable{
 	}
 
 	/**
-	 * log the villagers coordinates to the console
+	 * Returns wealth of Villager.
+	 * @return wealth of Villager
+	 */
+	public int getWealth() {
+		return wealth;
+	}
+
+	/**
+	 * log the villagers coordinates to the console.
 	 */
 	@Override
 	public void logCoordinates() {
 		System.out.println("VILLAGER:" + name + ";X-COORDINATE:" + xCoordinate + ";Y-COORDINATE:" + yCoordinate);	
 	}
-	
 
+	/**
+	 * Compares two Villagers by their wealth attribute.
+	 * Note: this comparator imposes orderings that are inconsistent with equals.
+	 * @param o1 Villager Object
+	 * @param o2 Vilalger object
+	 * @return 1 if first argument is of greater wealth greater than second - 
+	 *		   0 if both arguments are of the same wealth - 
+	 *		   -1 if first argument is of less wealth than second
+	 */
+	@Override
+	public int compare(Villager o1, Villager o2) {	
+		if (o1.getWealth() > o2.getWealth()) {
+			return 1;
+		} else if (o1.getWealth() == o2.getWealth()) {
+			return 0;
+		} else
+			return -1;
+	}
+	
 }

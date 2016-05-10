@@ -78,11 +78,12 @@ public class World implements Iterator<Biome> {
 	}
 
 	/**
-	 * Sets xIndex used by Iterator implementation.
-	 * @param xIndex the xIndex to set
+	 * Reset indices, so iterator can go over everything again.
+	 * Sets xIndex and yIndex used by Iterator implementation to 0.
 	 */
-	public void setxIndex(int xIndex) {
-		this.xIndex = xIndex;
+	public void resetIndices() {
+		xIndex = 0;
+		yIndex = 0;
 	}
 
 	/**
@@ -91,14 +92,6 @@ public class World implements Iterator<Biome> {
 	 */
 	public int getyIndex() {
 		return yIndex;
-	}
-
-	/**
-	 * Sets yIndex used by Iterator implementation.
-	 * @param yIndex the yIndex to set
-	 */
-	public void setyIndex(int yIndex) {
-		this.yIndex = yIndex;
 	}
 
 	/**

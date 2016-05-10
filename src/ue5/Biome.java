@@ -153,11 +153,11 @@ public class Biome implements Iterator<Village>{
 	}
 
 	/**
-	 * Sets current index used by iterator to iterator over village[].
-	 * @param index the index for iterator
+	 * Reset index, so iterator can go over everything again.
+	 * Sets index used by Iterator implementation to 0.
 	 */
-	public void setIndex(int index) {
-		this.index = index;
+	public void resetIndex() {
+		index = 0;
 	}
 
 	/**
