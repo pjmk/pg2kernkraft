@@ -10,5 +10,10 @@ package ue5;
 
 public interface ISlaughterable {
 	
+	/**
+	 * Returns meat of the animal and deletes it.
+	 * @return meat of the animal 
+	 */
+	
 	public Meat slaughter();
 }

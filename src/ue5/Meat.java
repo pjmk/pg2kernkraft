@@ -15,6 +15,14 @@ public class Meat {
 	private int daysTillSpoil;
 	private AnimalEnum type;
 	
+	/**
+	 * Generates Meat object.
+	 * 
+	 * @param maxWeight maxWeight of meat 
+	 * @param daysTillSpoil Days till the meat starts to spoil
+	 * @param type type of meat e.g. chicken, cow...
+	 */
+	
 	public Meat(int meatMaxWeight, int daysTillSpoil, AnimalEnum type) {
 		this.meatWeight = (int) (meatMaxWeight * Math.random());
 		this.daysTillSpoil = daysTillSpoil;

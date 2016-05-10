@@ -4,7 +4,8 @@ import java.util.ArrayList;
 
 public class KernTest_ue5 {
 	public static void main(String[] args) {
-
+		System.out.println("List of Creatures with their coordinates:\n");
+		
 		Biome biome;
 		ArrayList <Villager> forbes = new ArrayList<Villager>(); // needed for ue5 - comparator test
 
@@ -18,16 +19,19 @@ public class KernTest_ue5 {
 		 * Meat will be returned and the animal will be deleted
 		 * in this case : CHICKEN:Henriette
 		 */
+		
+		System.out.println("\ntesting class Meat:");
 		System.out.println("\n" + world.getBiome()[0][0].getVillage()[1].getVillager()[0].getPets()[0].toString());
 		Meat meat = world.getBiome()[0][0].getVillage()[1].getVillager()[0].getPets()[0].slaughter();
 		System.out.println(meat.toString());
-		System.out.println(AnimalEnum.WOLF.getMaxWeight());
+		System.out.println(AnimalEnum.WOLF.getMaxWeight()+ "\n");
 		
 
 		// Save the World again
 		worldutilities.writeWorldToFile(world, "output_file/ue5/weltMitTieren.txt");
 
 		//print Villages list (needed in ue5):
+		System.out.println("List of Villages:\n");
 		while (world.hasNext()) {
 			biome = world.next();
 			while (biome.hasNext()) {
@@ -37,6 +41,7 @@ public class KernTest_ue5 {
 		}
 		
 		// print forbes list (needed in ue5):
+		System.out.println("\nForbes list:\n");
 		world.resetIndices();
 		while (world.hasNext()) {
 			biome = world.next();
