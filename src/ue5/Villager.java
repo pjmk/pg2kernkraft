@@ -13,6 +13,8 @@ public class Villager implements IMovable{
 	private Profession profession;
 	private Gender gender;
 	private int age, xCoordinate, yCoordinate;
+	private final int MAX_WEALTH = 1000;
+	private int wealth;
 	private final int MAX_NUM_PETS = 10; //Just used because we don't know dynamic arrays yet
 	private Pet[] pets = new Pet[MAX_NUM_PETS];
 
@@ -37,12 +39,11 @@ public class Villager implements IMovable{
 											break;
 			}
 		}
-		// Generates random coordinates and log the villager to the console
+		// Generates random coordinates
 		setCoordinates();
-	}
-	
-	public Profession getProfession() {
-		return profession;
+		
+		//Generate random wealth of Villager
+		setWealth();
 	}
 
 	/**
@@ -62,13 +63,30 @@ public class Villager implements IMovable{
 		// Generates random coordinates and log the villager to the console
 		setCoordinates();
 		logCoordinates();
+		
+		//Generate random wealth of Villager
+		setWealth();
 	}
 
+	/**
+	 * Returns Villager's profession.
+	 * @return Villager's profession
+	 */
+	public Profession getProfession() {
+		return profession;
+	}
+	
+	/**
+	 * Sets wealth of Villager. Will be a random value between 0 and value of MAX_WEALTH.
+	 */
+	public void setWealth() {
+		wealth = (int) (Math.random() * MAX_WEALTH);
+	}
+	
 	/**
 	 * Return name of Villager.
 	 * @return name of Villager
 	 */
-	
 	public String getName() {
 		return name;
 	}
@@ -117,7 +135,7 @@ public class Villager implements IMovable{
 	}
 
 	/**
-	 * Generates random coordinates and log the villager to the console
+	 * Generates random coordinates and log the villager to the console.
 	 */
 	@Override
 	public void setCoordinates() {
@@ -145,7 +163,7 @@ public class Villager implements IMovable{
 	}
 
 	/**
-	 * log the villagers coordinates to the console
+	 * log the villagers coordinates to the console.
 	 */
 	@Override
 	public void logCoordinates() {
