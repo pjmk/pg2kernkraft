@@ -8,11 +8,11 @@ package ue5;
  *
  */
 
-public class Villager {
+public class Villager implements IMovable{
 	private String name;
 	private Profession profession;
 	private Gender gender;
-	private int age;
+	private int age, xCoordinate, yCoordinate;
 	private final int MAX_NUM_PETS = 10; //Just used because we don't know dynamic arrays yet
 	private Pet[] pets = new Pet[MAX_NUM_PETS];
 
@@ -37,6 +37,8 @@ public class Villager {
 											break;
 			}
 		}
+		// Generates random coordinates and log the villager to the console
+		setCoordinates();
 	}
 	
 	public Profession getProfession() {
@@ -56,6 +58,10 @@ public class Villager {
 		this.profession = profession;
 		this.gender = gender;
 		this.age = age;
+		
+		// Generates random coordinates and log the villager to the console
+		setCoordinates();
+		logCoordinates();
 	}
 
 	/**
@@ -97,6 +103,53 @@ public class Villager {
 	public String toString() {
 		return "VILLAGER:" + name + ";GENDER:" + gender.toString().toLowerCase()
 				+ ";AGE:" + age + ";PROFESSION:" + WorldUtilities.convertUpper(profession.toString());
+	}
+
+	/**
+	 *  set the coordinates of the villager.
+	 *  @param xCoordinate x-coordinate of the villager in the biome
+	 *  @param yCoordinate y-coordinate of the villager in the biome
+	 */
+	@Override
+	public void setCoordinates(int xCoordinate, int yCoordinate) {
+		this.xCoordinate = xCoordinate;
+		this.yCoordinate = yCoordinate;
+	}
+
+	/**
+	 * Generates random coordinates and log the villager to the console
+	 */
+	@Override
+	public void setCoordinates() {
+		this.xCoordinate = (int) (100 * Math.random());
+		this.yCoordinate = (int) (100 * Math.random());
+		logCoordinates();
+	}
+
+	/**
+	 * Returns x-coordinate of the Villager.
+	 * @return x-coordinate of the Villager
+	 */
+	@Override
+	public int getXCoordinate() {
+		return xCoordinate;
+	}
+	
+	/**
+	 * Returns y-coordinate of the Villager.
+	 * @return y-coordinate of the Villager
+	 */
+	@Override
+	public int getYCoordinate() {
+		return yCoordinate;
+	}
+
+	/**
+	 * log the villagers coordinates to the console
+	 */
+	@Override
+	public void logCoordinates() {
+		System.out.println("VILLAGER:" + name + ";X-COORDINATE:" + xCoordinate + ";Y-COORDINATE:" + yCoordinate);	
 	}
 	
 
