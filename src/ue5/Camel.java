@@ -54,7 +54,6 @@ public class Camel extends WildAnimal {
 		this.setMaxWeight(AnimalEnum.CAMEL.getMaxWeight());
 	}
 	
-
 	/**
 	 * Makes camel drink water.
 	 */
@@ -71,7 +70,7 @@ public class Camel extends WildAnimal {
 	}
 
 	/**
-	 * log the Camel coordinates to the console
+	 * Log the Camel coordinates to the console
 	 */
 	@Override
 	public void logCoordinates() {

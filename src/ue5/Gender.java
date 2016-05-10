@@ -7,7 +7,6 @@ package ue5;
  * 
  */
 
-
 public enum Gender {
 	   MALE,
 	   FEMALE;

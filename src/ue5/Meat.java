@@ -8,8 +8,6 @@ package ue5;
 * @author Paul Jureschek, Michael Kinzkofer
 *
 */
-
-
 public class Meat {
 	private int meatWeight;
 	private int daysTillSpoil;

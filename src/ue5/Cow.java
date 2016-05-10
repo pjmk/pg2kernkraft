@@ -66,7 +66,7 @@ public class Cow extends Pet {
 	}
 
 	/**
-	 * Returns meat of the animal and deletes himself.
+	 * Returns meat of the animal and deletes itself.
 	 * @return meat of the animal 
 	 */
 
@@ -85,7 +85,7 @@ public class Cow extends Pet {
 	}
 
 	/**
-	 * log the Cows coordinates to the console
+	 * Log the Cows coordinates to the console.
 	 */
 	@Override
 	public void logCoordinates() {

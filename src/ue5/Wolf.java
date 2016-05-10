@@ -102,7 +102,7 @@ public class Wolf extends WildAnimal {
 	}
 
 	/**
-	 * log the Wolf coordinates to the console
+	 * Log the Wolf coordinates to the console
 	 */
 	@Override
 	public void logCoordinates() {
