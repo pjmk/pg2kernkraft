@@ -109,4 +109,16 @@ public class Chicken extends Pet {
 		+ ";ANIMALAGE:" + this.getAge() + ";OWNER:" + this.getOwner().getName() 
 		+ ";CACKLING:" + Boolean.toString(isCackling) + ";NUMEGGS:" + Integer.toString(eggsLaid);
 	}
+
+
+	@Override
+	public Meat slaughter() {
+		Meat meat = new Meat(AnimalEnum.CHICKEN.getMaxWeight(), AnimalEnum.CHICKEN.getDaysTillSpoil(),
+					AnimalEnum.CHICKEN);
+		// TODO Auto-generated method stub
+		// TODO löschen des Tieren, nach slaughter 
+		return meat;
+	}
+	
+	
 }

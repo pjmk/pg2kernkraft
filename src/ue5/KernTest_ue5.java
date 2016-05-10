@@ -13,7 +13,13 @@ public class KernTest_ue5 {
 		System.out.println(world.getBiome(0, 2));
 		System.out.println(world.getVillagerByName("Dieter Knodel").getPets()[1].toString());
 		
-		Meat meat = new Meat(5, 10, AnimalEnum.COW);
+		
+		//Test Meat
+		Meat meat = world.getBiome()[0][0].getVillage()[1].getVillager()[0].getPets()[0].slaughter();
+		
+		System.out.println("\n" + world.getBiome()[0][0].getVillage()[1].getVillager()[0].getPets()[0].toString());
 		System.out.println(meat.toString());
+		System.out.println(AnimalEnum.WOLF.getMaxWeight());
 	}
+	
 }

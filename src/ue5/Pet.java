@@ -8,7 +8,7 @@ package ue5;
  *
  */
 
-public abstract class Pet extends Animal {
+public abstract class Pet extends Animal implements ISlaughterable{
 	private String name;
 	private Villager owner;
 	

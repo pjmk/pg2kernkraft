@@ -65,6 +65,15 @@ public class Cow extends Pet {
 		+ ";ANIMALAGE:" + this.getAge() + ";OWNER:" + this.getOwner().getName();
 	}
 
+	@Override
+	public Meat slaughter() {
+		Meat meat = new Meat(AnimalEnum.COW.getMaxWeight(), AnimalEnum.COW.getDaysTillSpoil(),
+					AnimalEnum.COW);
+		// TODO Auto-generated method stub
+		// TODO löschen des Tieren, nach slaughter 
+		return meat;
+	}
+
 	
 	
 }

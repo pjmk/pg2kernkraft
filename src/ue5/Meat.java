@@ -15,8 +15,8 @@ public class Meat {
 	private int daysTillSpoil;
 	private AnimalEnum type;
 	
-	public Meat(int meatWeight, int daysTillSpoil, AnimalEnum type) {
-		this.meatWeight = meatWeight;
+	public Meat(int meatMaxWeight, int daysTillSpoil, AnimalEnum type) {
+		this.meatWeight = (int) (meatMaxWeight * Math.random());
 		this.daysTillSpoil = daysTillSpoil;
 		this.type = type;
 	}
