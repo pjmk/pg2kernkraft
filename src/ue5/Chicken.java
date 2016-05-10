@@ -120,5 +120,54 @@ public class Chicken extends Pet {
 		return meat;
 	}
 	
+	/**
+	 *  set the coordinates of the Chicken.
+	 *  @param xCoordinate x-coordinate of the villager in the biome
+	 *  @param yCoordinate y-coordinate of the villager in the biome
+	 */
+	@Override
+	public void setCoordinates(int xCoordinate, int yCoordinate) {
+		this.xCoordinate = xCoordinate;
+		this.yCoordinate = yCoordinate;
+	}
+
+	/**
+	 * Generates random coordinates and log the coordinates
+	 *  of the Chicken to the console
+	 */
+	@Override
+	public void setCoordinates() {
+		this.xCoordinate = (int) (100 * Math.random());
+		this.yCoordinate = (int) (100 * Math.random());
+		logCoordinates();
+	}
+
+	/**
+	 * Returns x-coordinate of the Villager.
+	 * @return x-coordinate of the Villager
+	 */
+	@Override
+	public int getXCoordinate() {
+		return xCoordinate;
+	}
+	
+	/**
+	 * Returns y-coordinate of the Villager.
+	 * @return y-coordinate of the Villager
+	 */
+	@Override
+	public int getYCoordinate() {
+		return yCoordinate;
+	}
+
+	/**
+	 * log the villagers coordinates to the console
+	 */
+	@Override
+	public void logCoordinates() {
+		System.out.println("CHICKEN:" + ";X-COORDINATE:" + xCoordinate + ";Y-COORDINATE:" + yCoordinate);	
+	}
+	
+	
 	
 }

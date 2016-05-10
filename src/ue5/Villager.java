@@ -59,9 +59,8 @@ public class Villager implements IMovable{
 		this.gender = gender;
 		this.age = age;
 		
-		// Generates random coordinates and log the villager to the console
+		//  Generates random coordinates
 		setCoordinates();
-		logCoordinates();
 	}
 
 	/**

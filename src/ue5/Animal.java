@@ -6,16 +6,20 @@ package ue5;
  * @author Michael Kinzkofer, Paul Jureschek
  *
  */
-public abstract class Animal {
+public abstract class Animal implements IMovable{
 	private Color color;
 	private int age;
+	protected int xCoordinate;
+	protected int yCoordinate;
 	private int maxWeight;
 	
 	/**
 	 * Generates Animal object.
 	 * Is used by subclasses.
 	 */
-	protected Animal() {	
+	protected Animal() {
+	//  Generates random coordinates
+			setCoordinates();
 	}
 	
 	/**

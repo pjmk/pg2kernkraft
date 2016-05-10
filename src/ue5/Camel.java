@@ -71,6 +71,56 @@ public class Camel extends WildAnimal {
 	}
 
 
+	/**
+	 *  set the coordinates of the Camel.
+	 *  @param xCoordinate x-coordinate of the villager in the biome
+	 *  @param yCoordinate y-coordinate of the villager in the biome
+	 */
+	@Override
+	public void setCoordinates(int xCoordinate, int yCoordinate) {
+		this.xCoordinate = xCoordinate;
+		this.yCoordinate = yCoordinate;
+	}
+
+	/**
+	 * Generates random coordinates and log the coordinates
+	 *  of the Camel to the console
+	 */
+	@Override
+	public void setCoordinates() {
+		this.xCoordinate = (int) (100 * Math.random());
+		this.yCoordinate = (int) (100 * Math.random());
+		logCoordinates();
+	}
+
+	/**
+	 * Returns x-coordinate of the Camel.
+	 * @return x-coordinate of the Camel
+	 */
+	@Override
+	public int getXCoordinate() {
+		return xCoordinate;
+	}
+	
+	/**
+	 * Returns y-coordinate of the Camel.
+	 * @return y-coordinate of the Camel
+	 */
+	@Override
+	public int getYCoordinate() {
+		return yCoordinate;
+	}
+
+	/**
+	 * log the Camel coordinates to the console
+	 */
+	@Override
+	public void logCoordinates() {
+		System.out.println("CAMEL:" +  "X-COORDINATE:" + xCoordinate + ";Y-COORDINATE:" + yCoordinate);	
+	}
+	
+
+
 
 
 }
