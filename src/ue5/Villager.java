@@ -1,5 +1,7 @@
 package ue5;
 
+import java.util.Comparator;
+
 /**
  * The class Villager describes one Villager.
  * It must have a name, a gender and an age.
@@ -8,7 +10,7 @@ package ue5;
  *
  */
 
-public class Villager implements IMovable{
+public class Villager implements IMovable, Comparator<Villager>{
 	private String name;
 	private Profession profession;
 	private Gender gender;
@@ -163,11 +165,38 @@ public class Villager implements IMovable{
 	}
 
 	/**
+	 * Returns wealth of Villager.
+	 * @return wealth of Villager
+	 */
+	public int getWealth() {
+		return wealth;
+	}
+
+	/**
 	 * log the villagers coordinates to the console.
 	 */
 	@Override
 	public void logCoordinates() {
 		System.out.println("VILLAGER:" + name + ";X-COORDINATE:" + xCoordinate + ";Y-COORDINATE:" + yCoordinate);	
+	}
+
+	/**
+	 * Compares two Villagers by their wealth attribute.
+	 * Note: this comparator imposes orderings that are inconsistent with equals.
+	 * @param o1 Villager Object
+	 * @param o2 Vilalger object
+	 * @return 1 if first argument is of greater wealth greater than second - 
+	 *		   0 if both arguments are of the same wealth - 
+	 *		   -1 if first argument is of less wealth than second
+	 */
+	@Override
+	public int compare(Villager o1, Villager o2) {	
+		if (o1.getWealth() > o2.getWealth()) {
+			return 1;
+		} else if (o1.getWealth() == o2.getWealth()) {
+			return 0;
+		} else
+			return -1;
 	}
 	
 
