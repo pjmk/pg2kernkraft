@@ -182,9 +182,9 @@ public class Biome implements Iterator<Village>{
 	}
 	
 	/**
-	 * Returns next Village object from village[] after current index, if there is one. 
-	 * Additionally it increments index.
-	 * @return next Village object
+	 * Returns Village object from village[] at current index. 
+	 * Additionally it increments index if there is an village after the current index.
+	 * @return Village object
 	 */
 	@Override
 	public Village next() {
