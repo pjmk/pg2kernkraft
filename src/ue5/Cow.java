@@ -75,7 +75,7 @@ public class Cow extends Pet {
 		Meat meat = new Meat(AnimalEnum.COW.getMaxWeight(), AnimalEnum.COW.getDaysTillSpoil(),
 					AnimalEnum.COW);
 		// Delete the animal in Pet[] in Villager
-		for(int i = 0; i < Villager.getMAX_NUM_PETS(); i++) {
+		for(int i = 0; i < Villager.getMaxNumPets(); i++) {
 			Pet pet =  getOwner().getPets()[i];
 			if (pet == this){
 				getOwner().getPets()[i] = null;

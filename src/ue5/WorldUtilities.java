@@ -22,7 +22,7 @@ public class WorldUtilities {
 	private static int villageNum;
 	private World world = null;
 	private static int villagePopulation[] = new int[NUM_VILLAGES_OVERALL];
-	private int villageProffesions[][] = new int[NUM_VILLAGES_OVERALL][2];
+	private int villageProfessions[][] = new int[NUM_VILLAGES_OVERALL][2];
 		
 	/**
 	 * Read World-object from file(format: .txt). 
@@ -50,11 +50,11 @@ public class WorldUtilities {
 											WorldUtilities.villagePopulation[villageNum - 1]++;
 											if (inputData[7].toUpperCase().contains(Keywords.DOCTOR)) {
 												//System.out.println("im in doctor" + (villageNum - 1));
-												villageProffesions[villageNum - 1][0]++;
+												villageProfessions[villageNum - 1][0]++;
 											}
 											if (inputData[7].toUpperCase().contains(Keywords.FARMER)){
 												//System.out.println("im in farmer");
-												villageProffesions[villageNum - 1][1]++;
+												villageProfessions[villageNum - 1][1]++;
 											}
 											break;
 					// For animals there is nothing to do here!
@@ -275,7 +275,7 @@ public class WorldUtilities {
 		 * villageProffesions[villageNum][0] == amount of doctors in this village
 		 * villageProffesions[villageNum][1] == amount of farmers in this village
 		 */
-		if (villageProffesions[villageNum][0] >= 1 && villageProffesions[villageNum][1] >= 2)
+		if (villageProfessions[villageNum][0] >= 1 && villageProfessions[villageNum][1] >= 2)
 			return true;
 		else
 			 // Troubleshooting

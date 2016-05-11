@@ -16,7 +16,7 @@ public class Villager implements IMovable, Comparable<Villager>{
 	private Gender gender;
 	private int age, xCoordinate, yCoordinate;
 	private final static int MAX_NUM_PETS = 10; //Just used because we don't know dynamic arrays yet
-	private final int MAX_WEALTH = 1000;
+	private final static int MAX_WEALTH = 1000;
 	private int wealth;
 	private Pet[] pets = new Pet[MAX_NUM_PETS];
 
@@ -117,7 +117,7 @@ public class Villager implements IMovable, Comparable<Villager>{
 	 * @return max number of pets
 	 */
 
-	public static int getMAX_NUM_PETS() {
+	public static int getMaxNumPets() {
 		return MAX_NUM_PETS;
 	}
 

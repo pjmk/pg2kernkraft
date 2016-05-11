@@ -5,7 +5,7 @@ package ue5;
 * The class Meat is described by type, daysTillSpoil and weight.
 * It is returned, if a Animal is slaughtered.
 *
-* @author Paul Jureschek, Michael Kinzkofer
+* @author Michael Kinzkofer
 *
 */
 public class Meat {
@@ -28,7 +28,7 @@ public class Meat {
 	}
 	
 	/**
-	 * Return weight, day till spoil and type of Meat.
+	 * Return weight, day till spoil and type of Meat as concatenated String.
 	 * @return weight, day till spoil and type of Meat
 	 */
 	@Override

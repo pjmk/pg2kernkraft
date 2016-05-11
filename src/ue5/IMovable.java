@@ -11,7 +11,7 @@ package ue5;
 public interface IMovable {
 	
 	/**
-	 *  set coordinates of object.
+	 *  Set coordinates of object.
 	 *  @param xCoordinate x-coordinate of object
 	 *  @param yCoordinate y-coordinate of 
 	 */
@@ -19,7 +19,7 @@ public interface IMovable {
 	public void setCoordinates (int xCoordinate, int yCoordinate);
 	
 	/**
-	 * set coordinates of object
+	 * Set coordinates of object.
 	 */
 	
 	public void setCoordinates ();
@@ -39,7 +39,7 @@ public interface IMovable {
 	public int getYCoordinate();
 	
 	/**
-	 * log the coordinates to the console
+	 * Log the coordinates to the console.
 	 */
 	
 	public void logCoordinates();
