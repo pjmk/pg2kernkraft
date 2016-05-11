@@ -5,7 +5,7 @@ package ue1;
  * It has to have a name and a kind (e.g. "desert", "gras"...).
  *
  *
- * @author Paul Jureschek, Michael Kinzkofer
+ * @author Paul Jureschek
  *
  */
 
