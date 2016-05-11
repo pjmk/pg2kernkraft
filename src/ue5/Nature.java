@@ -2,16 +2,16 @@ package ue5;
 
 /**
 * This enum contains different kind of biomes (e.g. "Desert", "Jungle"...).
-* 
-* @author Paul Jureschek, Michael Kinzkofer
-* 
+*
+* @author Michael Kinzkofer
+*
 */
 
 public enum Nature {
-	MEADOWS, 
-	JUNGLE, 
-	DESERT, 
-	ARCTIC, 
+	MEADOWS,
+	JUNGLE,
+	DESERT,
+	ARCTIC,
 	MOUNTAINS,
 	VULCANO,
 	FOREST,
@@ -19,13 +19,13 @@ public enum Nature {
 	BEACH,
 	OCEAN,
 	ISLAND;
-	
+
 	/**
 	 * Check string to see whether the string is contained in enumeration Nature or not.
 	 * @param input String to be compared
 	 * @return boolean
 	 */
-	
+
 	public static boolean isEqualToNatureElement(String input)
 	  {
 	    for(Nature nature : Nature.values()) {
@@ -38,5 +38,5 @@ public enum Nature {
 	    		+ "\nfailed to initialize biome...");
 	    return false;
 	  }
-	
+
 }

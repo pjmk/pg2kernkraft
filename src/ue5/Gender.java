@@ -2,21 +2,21 @@ package ue5;
 
 /**
  * This enum contains different types of genders.
- * 
- * @author Paul Jureschek, Michael Kinzkofer
- * 
+ *
+ * @author Michael Kinzkofer
+ *
  */
 
 public enum Gender {
 	   MALE,
 	   FEMALE;
-	
+
 	/**
 	 * Check string to see whether the string is contained in enumeration Gender or not.
 	 * @param input String to be compared
 	 * @return boolean
 	 */
-	
+
 	public static boolean isEqualToGenderElement(String input)
 	  {
 	    for(Gender gender : Gender.values()) {
@@ -29,5 +29,5 @@ public enum Gender {
 	    		+ "\nfailed to initialize villager...");
 	    return false;
 	  }
-	
+
 }

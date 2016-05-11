@@ -1,16 +1,16 @@
 package ue5;
 
-import java.util.Comparator;
+import java.lang.Comparable;
 
 /**
  * The class Villager describes one Villager.
  * It must have a name, a gender and an age.
- * 
+ *
  * @author Paul Jureschek, Michael Kinzkofer
  *
  */
 
-public class Villager implements IMovable, Comparator<Villager>{
+public class Villager implements IMovable, Comparable<Villager>{
 	private String name;
 	private Profession profession;
 	private Gender gender;
@@ -24,18 +24,18 @@ public class Villager implements IMovable, Comparator<Villager>{
 	 * Generates new Villager.
 	 * @param row 	String containing all attributes e.g. (Gender,
 	 *  			Profession or Age)
-	 */	
-	
+	 */
+
 	public Villager(String row) {
 		//splits each word in inputData[] array
 		String[] inputData = row.split(";|\\:");
 		for (int i = 0; i < inputData.length; i += 2) {
 			switch(inputData[i]) {
-				case Keywords.VILLAGER:		this.name = inputData[i + 1];			
+				case Keywords.VILLAGER:		this.name = inputData[i + 1];
 											break;
 				case Keywords.GENDER:		this.gender = Gender.valueOf(inputData[i + 1].toUpperCase());
-											break;		
-				case Keywords.AGE:			this.age = Integer.valueOf(inputData[i + 1]);	
+											break;
+				case Keywords.AGE:			this.age = Integer.valueOf(inputData[i + 1]);
 											break;
 				case Keywords.PROFESSION:	this.profession = Profession.valueOf(inputData[i + 1].toUpperCase());
 											break;
@@ -43,7 +43,7 @@ public class Villager implements IMovable, Comparator<Villager>{
 		}
 		// Generates random coordinates
 		setCoordinates();
-		
+
 		//Generate random wealth of Villager
 		setWealth();
 	}
@@ -55,13 +55,13 @@ public class Villager implements IMovable, Comparator<Villager>{
 	 * @param age age of Villager
 	 * @param profession profession of Villager
 	 */
-	
+
 	public Villager(String name, Gender gender, int age, Profession profession) {
 		this.name = name;
 		this.profession = profession;
 		this.gender = gender;
 		this.age = age;
-		
+
 		//  Generates random coordinates
 		setCoordinates();
 		setWealth();
@@ -74,14 +74,14 @@ public class Villager implements IMovable, Comparator<Villager>{
 	public Profession getProfession() {
 		return profession;
 	}
-	
+
 	/**
 	 * Sets wealth of Villager. Will be a random value between 0 and value of MAX_WEALTH.
 	 */
 	public void setWealth() {
 		wealth = (int) (Math.random() * MAX_WEALTH);
 	}
-	
+
 	/**
 	 * Return name of Villager.
 	 * @return name of Villager
@@ -89,12 +89,12 @@ public class Villager implements IMovable, Comparator<Villager>{
 	public String getName() {
 		return name;
 	}
-	
+
 	/**
 	 * Add pet to villager.
 	 * @param pet pet to be added
 	 */
-	public void addPet(Pet pet) {		
+	public void addPet(Pet pet) {
 		for (int i = 0; i < MAX_NUM_PETS; i++) {
 			if (pets[i] == null) {
 				pets[i] = pet;
@@ -103,7 +103,7 @@ public class Villager implements IMovable, Comparator<Villager>{
 		}
 		System.out.println("No more pets allowed on this villager");
 	}
-	
+
 	/**
 	 * Returns pets array owned by Villager.
 	 * @return pets owned by Villager
@@ -111,12 +111,12 @@ public class Villager implements IMovable, Comparator<Villager>{
 	public Pet[] getPets() {
 		return pets;
 	}
-	
+
 	/**
 	 * Returns max number of pets.
 	 * @return max number of pets
 	 */
-	
+
 	public static int getMAX_NUM_PETS() {
 		return MAX_NUM_PETS;
 	}
@@ -160,7 +160,7 @@ public class Villager implements IMovable, Comparator<Villager>{
 	public int getXCoordinate() {
 		return xCoordinate;
 	}
-	
+
 	/**
 	 * Returns y-coordinate of the Villager.
 	 * @return y-coordinate of the Villager
@@ -183,7 +183,7 @@ public class Villager implements IMovable, Comparator<Villager>{
 	 */
 	@Override
 	public void logCoordinates() {
-		System.out.println("VILLAGER:" + name + ";X-COORDINATE:" + xCoordinate + ";Y-COORDINATE:" + yCoordinate);	
+		System.out.println("VILLAGER:" + name + ";X-COORDINATE:" + xCoordinate + ";Y-COORDINATE:" + yCoordinate);
 	}
 
 	/**
@@ -191,18 +191,18 @@ public class Villager implements IMovable, Comparator<Villager>{
 	 * Note: this comparator imposes orderings that are inconsistent with equals.
 	 * @param o1 Villager Object
 	 * @param o2 Vilalger object
-	 * @return 1 if first argument is of greater wealth greater than second - 
-	 *		   0 if both arguments are of the same wealth - 
+	 * @return 1 if first argument is of greater wealth greater than second -
+	 *		   0 if both arguments are of the same wealth -
 	 *		   -1 if first argument is of less wealth than second
 	 */
 	@Override
-	public int compare(Villager o1, Villager o2) {	
-		if (o1.getWealth() > o2.getWealth()) {
+	public int compareTo(Villager o1) {
+		if (wealth > o1.wealth) {
 			return 1;
-		} else if (o1.getWealth() == o2.getWealth()) {
+		} else if (wealth == o1.wealth) {
 			return 0;
 		} else
 			return -1;
 	}
-	
+
 }

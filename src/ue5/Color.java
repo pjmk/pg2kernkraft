@@ -2,7 +2,7 @@ package ue5;
 
 /**
  * This Enumeration provides some valid colors.
- * @author Michael Kinzkofer, Paul Jureschek
+ * @author Paul Jureschek
  *
  */
 public enum Color {
