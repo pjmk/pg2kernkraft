@@ -50,7 +50,7 @@ public class KernTest_ue5 {
 		}
 
 		// print forbes list (needed in ue5):
-		System.out.println("\nForbes list:\n");
+		System.out.println("\nForbes list:");
 		world.resetIndices();
 		while (world.hasNext()) {
 			biome = world.next();
