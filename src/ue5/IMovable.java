@@ -4,7 +4,7 @@ package ue5;
  * The interface is for objects, which should be movable.
  * In this case e.g. Animals and Villagers
  * 
- * @author Michael Kinzkofer, Paul Jureschek
+ * @author Michael Kinzkofer
  *
  */
 

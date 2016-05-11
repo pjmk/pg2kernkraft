@@ -4,7 +4,7 @@ package ue5;
  * The interface is for objects, which should be slaughterable.
  * In this case Pets.
  * 
- * @author Michael Kinzkofer, Paul Jureschek
+ * @author Michael Kinzkofer
  *
  */
 
