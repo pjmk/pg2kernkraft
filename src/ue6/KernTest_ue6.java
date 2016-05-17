@@ -26,7 +26,7 @@ public class KernTest_ue6 {
 		Cage<Animal> cage1 = new Cage<Animal>();
 		cage1.putInCage(world.getBiome()[0][0].getVillage()[0].getVillager()[2].getPets()[0]);
 		cage1.putInCage(world.getBiome()[0][0].getVillage()[0].getVillager()[2].getPets()[1]);
-		//cage1.toString();
+		System.out.println(cage1.toString());
 		
 		
 	}

@@ -1,8 +1,5 @@
 package ue6;
 
-import java.util.Iterator;
-
-public interface ICatchable extends Iterable<ICatchable> {
+public interface ICatchable {
 	public int getWeight();
-	public Iterator<ICatchable> iterator();
 }

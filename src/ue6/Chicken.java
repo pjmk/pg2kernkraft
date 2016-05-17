@@ -1,5 +1,7 @@
 package ue6;
 
+import java.util.Iterator;
+
 /**
  * This class generates a chicken.
  * It inherits from class Pet.
@@ -29,8 +31,9 @@ public class Chicken extends Pet {
 		this.eggsLaid = eggsLaid;
 		// set the typical max weight ( which is saved in AnimalEnum) 
 		this.setMaxWeight(AnimalEnum.CHICKEN.getMaxWeight());
+		//Set Weight;
+		setWeight();
 	}
-	
 	
 	/**
 	 * Generates Chicken object.
@@ -61,6 +64,8 @@ public class Chicken extends Pet {
 		this.getOwner().addPet(this);
 		// set the typical max weight ( which is saved in AnimalEnum) 
 		this.setMaxWeight(AnimalEnum.CHICKEN.getMaxWeight());
+		//Set Weight;
+		setWeight();
 	}
 	
 	/**
@@ -108,6 +113,9 @@ public class Chicken extends Pet {
 		return weight;
 	}
 	
+	/**
+	 * Sets weight of Animal to something between 1 and defined maxWeight in AnimalEnum.
+	 */
 	public void setWeight() {
 		weight = (int) Math.floor(Math.random() * AnimalEnum.CHICKEN.getMaxWeight() + 1);
 	}
@@ -145,7 +153,4 @@ public class Chicken extends Pet {
 	public void logCoordinates() {
 		System.out.println("CHICKEN:" + ";X-COORDINATE:" + getXCoordinate() + ";Y-COORDINATE:" + getYCoordinate());	
 	}
-	
-	
-	
 }

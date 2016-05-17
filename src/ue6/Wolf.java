@@ -12,6 +12,7 @@ package ue6;
 
 public class Wolf extends WildAnimal implements ICatchable{
 	private boolean isRaging = false;
+	int weight;
 	
 	/**
 	 * Generates Wolf object. Input must be a special string containing all information.
@@ -43,6 +44,8 @@ public class Wolf extends WildAnimal implements ICatchable{
 		super.getCurrBiome().addWildAnimal(this);
 		// set the typical max weight ( which is saved in AnimalEnum) 
 		this.setMaxWeight(AnimalEnum.WOLF.getMaxWeight());
+		//Set Weight;
+		setWeight();
 	}
 	
 	/**
@@ -61,6 +64,8 @@ public class Wolf extends WildAnimal implements ICatchable{
 		this.isRaging = isRaging;
 		// set the typical max weight ( which is saved in AnimalEnum) 
 		this.setMaxWeight(AnimalEnum.WOLF.getMaxWeight());
+		//Set Weight;
+		setWeight();
 	}
 
 	/**
@@ -71,6 +76,18 @@ public class Wolf extends WildAnimal implements ICatchable{
 	public boolean isRaging() {
 		return isRaging;
 	}
+	
+	public int getWeight() {
+		return weight;
+	}
+	
+	/**
+	 * Sets weight of Animal to something between 1 and defined maxWeight in AnimalEnum.
+	 */
+	public void setWeight() {
+		weight = (int) Math.floor(Math.random() * AnimalEnum.WOLF.getMaxWeight() + 1);
+	}
+	
 
 	/**
 	 * Prints what wolf is doing (hunting chicken)

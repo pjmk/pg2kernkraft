@@ -11,6 +11,7 @@ package ue6;
 public abstract class Pet extends Animal implements ISlaughterable, ICatchable{
 	private String name;
 	private Villager owner;
+	private int weight;
 	
 	
 	/**
@@ -61,7 +62,6 @@ public abstract class Pet extends Animal implements ISlaughterable, ICatchable{
 	public Villager getOwner() {
 		return owner;
 	}
-
 
 	/**
 	 * Sets the name of pet.
