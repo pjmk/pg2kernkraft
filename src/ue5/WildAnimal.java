@@ -1,7 +1,5 @@
 package ue5;
 
-import ue5.Animal;
-
  /**
   * The class WildAnimal provides attributes for its subclasses
   * It inherits from the class Animal
