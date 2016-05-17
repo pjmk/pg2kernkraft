@@ -9,9 +9,9 @@ import java.util.ArrayList;
  * @author Michael Kinzkofer
  *
  */
-public class Cage <T> implements IMovable{
+public class Cage <T extends Animal & ICatchable> implements IMovable{
 	private static final int maxCageContent =  2200;
-	private  ArrayList<T>  cageContent;
+	private  ArrayList<ICatchable>  cageContent;
 	private int capacity, currentWeight, xCoordinate, yCoordinate;
 	
 	
@@ -32,16 +32,17 @@ public class Cage <T> implements IMovable{
 	
 	
 	/**
-	 * Put a animal in the cage.
+	 * Put an animal in the cage.
 	 * @param animal animal which should be put in the cage
 	 */
 	public void putInCage(T animal){
-		if(currentWeight + animal.getWeight() > capacity)
+		if(currentWeight +  animal.getWeight() > capacity)
 			System.out.println("cage is full! animal does not fit in ");
-		else 
+		else {
+			this.currentWeight += animal.getWeight();
 			cageContent.add(animal);
+		}
 	}
-	
 	
 	/**
 	 *  set the coordinates of the Cage.
