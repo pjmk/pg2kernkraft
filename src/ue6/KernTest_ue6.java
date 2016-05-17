@@ -1,5 +1,6 @@
 package ue6;
 
+import javax.swing.text.html.HTMLDocument.Iterator;
 
 /**
  * Main for testing current project.
@@ -37,6 +38,11 @@ public class KernTest_ue6 {
 		// Test Case 2: toString of Cage
 		System.out.println(cage1.toString());
 		// test passed successfully
+	
+		
+		
+		
+		
 		
 	}
 }
