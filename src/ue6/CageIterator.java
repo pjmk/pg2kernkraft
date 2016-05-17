@@ -57,12 +57,14 @@ public class CageIterator<T extends Animal> implements Iterator<T> {
 	/**
 	 * Removes last returned element (index-1).
 	 * My only be called once per iteration.
+	 * It also decrements index by one, so indices stay up-to-date.
 	 */
 	@Override
 	public void remove() {
 		if (nextCounter == 1) {
 			animals.remove(index - 1);
 			nextCounter = 0;
+			index -= 1;
 		} else {
 			throw new IllegalStateException("Must not call remove function more than once per iteration!");
 		}
