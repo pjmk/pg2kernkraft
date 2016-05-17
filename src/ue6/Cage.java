@@ -117,8 +117,4 @@ public class Cage <T extends Animal> implements IMovable, Iterable<T>{
 		CageIterator<T> cageIterator = new CageIterator<T>(cageContent);
 		return cageIterator;
 	}
-
-	
-	
-
 }
