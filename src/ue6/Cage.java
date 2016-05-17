@@ -108,10 +108,14 @@ public class Cage <T extends Animal> implements IMovable, Iterable<T>{
 				+ ", xCoordinate=" + xCoordinate + ", yCoordinate=" + yCoordinate + "]";
 	}
 
+	/**
+	 * Generates Iterator for this cage object and returns it.
+	 * @return cageIterator
+	 */
 	@Override
 	public Iterator<T> iterator() {
-		
-		return null;
+		CageIterator<T> cageIterator = new CageIterator<T>(cageContent);
+		return cageIterator;
 	}
 
 	

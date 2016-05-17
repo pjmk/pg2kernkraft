@@ -4,12 +4,12 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-public class CageIterator implements Iterator<ICatchable> {
+public class CageIterator<T extends Animal> implements Iterator<T> {
 	int index;
-	ArrayList<ICatchable> animals;
+	ArrayList<T> animals;
 	int nextCounter = 0;
 	
-	public CageIterator(ArrayList<ICatchable> animals) {
+	public CageIterator(ArrayList<T> animals) {
 		index = 0;
 		this.animals = animals;
 	}
@@ -32,7 +32,7 @@ public class CageIterator implements Iterator<ICatchable> {
 	 * @return element at current index
 	 */
 	@Override
-	public ICatchable next() {
+	public T next() {
 		if (hasNext()) {
 			index++;
 			nextCounter = 1;
