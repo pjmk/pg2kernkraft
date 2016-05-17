@@ -1,12 +1,10 @@
-/**
- * 
- */
 package ue6;
-
 import java.util.ArrayList;
 import java.util.Iterator;
 
 /**
+ * The generic class Cage can contain different kinds of catchable Animals.
+ * 
  * @author Michael Kinzkofer
  *
  */
