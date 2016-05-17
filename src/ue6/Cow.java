@@ -22,8 +22,6 @@ public class Cow extends Pet {
 	 */
 	public Cow(Color color, int age, String name, Villager owner) {
 		super(color, age, name, owner);
-		// set the typical max weight ( which is saved in AnimalEnum) 
-		this.setMaxWeight(AnimalEnum.COW.getMaxWeight());
 		//Set Weight;
 		setWeight();
 		
@@ -52,8 +50,6 @@ public class Cow extends Pet {
 		}
 		// Add Cow to Villager
 		this.getOwner().addPet(this);
-		// set the typical max weight ( which is saved in AnimalEnum) 
-		this.setMaxWeight(AnimalEnum.CAMEL.getMaxWeight());
 		//Set Weight;
 		setWeight();
 	}
@@ -91,7 +87,7 @@ public class Cow extends Pet {
 
 	@Override
 	public Meat slaughter() {
-		Meat meat = new Meat(AnimalEnum.COW.getMaxWeight(), AnimalEnum.COW.getDaysTillSpoil(),
+		Meat meat = new Meat(weight, AnimalEnum.COW.getDaysTillSpoil(),
 					AnimalEnum.COW);
 		// Delete the animal in Pet[] in Villager
 		for(int i = 0; i < Villager.getMaxNumPets(); i++) {

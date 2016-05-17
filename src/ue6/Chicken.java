@@ -29,8 +29,6 @@ public class Chicken extends Pet {
 		
 		this.isCackling = isCackling;
 		this.eggsLaid = eggsLaid;
-		// set the typical max weight ( which is saved in AnimalEnum) 
-		this.setMaxWeight(AnimalEnum.CHICKEN.getMaxWeight());
 		//Set Weight;
 		setWeight();
 	}
@@ -62,8 +60,6 @@ public class Chicken extends Pet {
 		}
 		// Add Chicken to Villager
 		this.getOwner().addPet(this);
-		// set the typical max weight ( which is saved in AnimalEnum) 
-		this.setMaxWeight(AnimalEnum.CHICKEN.getMaxWeight());
 		//Set Weight;
 		setWeight();
 	}
@@ -134,7 +130,7 @@ public class Chicken extends Pet {
 
 	@Override
 	public Meat slaughter() {
-		Meat meat = new Meat(AnimalEnum.CHICKEN.getMaxWeight(), AnimalEnum.CHICKEN.getDaysTillSpoil(),
+		Meat meat = new Meat(weight, AnimalEnum.CHICKEN.getDaysTillSpoil(),
 					AnimalEnum.CHICKEN);
 		// Delete the animal in Pet[] in Villager
 		for(int i = 0; i < Villager.getMaxNumPets(); i++) {

@@ -4,11 +4,23 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
+/**
+ * This class provides the ability to iterate over Animals stored in a cage.
+ * 
+ * @author Paul Jureschek
+ *
+ * @param <T> Object-Specification of Animals stored in Cage.
+ */
+
 public class CageIterator<T extends Animal> implements Iterator<T> {
 	int index;
 	ArrayList<T> animals;
 	int nextCounter = 0;
 	
+	/**
+	 * Generates CageIterator object.
+	 * @param animals ArrayList that will be iterated
+	 */
 	public CageIterator(ArrayList<T> animals) {
 		index = 0;
 		this.animals = animals;
