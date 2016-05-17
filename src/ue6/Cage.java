@@ -60,6 +60,7 @@ public class Cage <T extends Animal> implements IMovable, Iterable<T>{
 							this.currentWeight -= currentAnimal.getWeight(); 
 							cageIterator.remove();
 							System.out.println("Oh the wolf killed a chicken, bad decision bro");
+							cageIterator = iterator();
 						}
 					}
 					break;
