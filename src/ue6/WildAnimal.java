@@ -1,8 +1,8 @@
 package ue6;
 
  /**
-  * The class WildAnimal provides attributes for its subclasses
-  * It inherits from the class Animal
+  * The class WildAnimal provides attributes for its subclasses.
+  * It inherits from the class Animal.
   * 
   * @author Michael Kinzkofer, Paul Jureschek
   *

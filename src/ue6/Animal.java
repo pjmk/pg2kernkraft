@@ -11,7 +11,6 @@ public abstract class Animal implements IMovable{
 	private int age;
 	private int xCoordinate;
 	private int yCoordinate;
-	private int maxWeight;
 	
 	/**
 	 * Generates Animal object.
@@ -74,24 +73,6 @@ public abstract class Animal implements IMovable{
 	 */
 	public int getAge() {
 		return age;
-	}
-
-	/**
-	 * Get the max weight of the animal.
-	 * @return max weight of the animal
-	 */
-	
-	public int getMaxWeight() {
-		return maxWeight;
-	}
-
-	/**
-	 * Set the max weight of the animal.
-	 * @param maxWeight max weight of the animal
-	 */
-	
-	protected void setMaxWeight(int maxWeight) {
-		this.maxWeight = maxWeight;
 	} 
 	
 	/**

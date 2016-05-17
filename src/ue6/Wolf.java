@@ -42,8 +42,6 @@ public class Wolf extends WildAnimal implements ICatchable{
 		}
 		// Add Wolf to Biom:
 		super.getCurrBiome().addWildAnimal(this);
-		// set the typical max weight ( which is saved in AnimalEnum) 
-		this.setMaxWeight(AnimalEnum.WOLF.getMaxWeight());
 		//Set Weight;
 		setWeight();
 	}
@@ -62,8 +60,6 @@ public class Wolf extends WildAnimal implements ICatchable{
 		super(color, age, id, pref, currBiome);
 		
 		this.isRaging = isRaging;
-		// set the typical max weight ( which is saved in AnimalEnum) 
-		this.setMaxWeight(AnimalEnum.WOLF.getMaxWeight());
 		//Set Weight;
 		setWeight();
 	}
