@@ -2,7 +2,7 @@ package ue6;
 
 /**
  * The interface is for objects, which should be movable.
- * In this case e.g. Animals and Villagers
+ * In this case e.g. Animals, Villagers, cages
  * 
  * @author Michael Kinzkofer
  *
