@@ -190,7 +190,6 @@ public class Villager implements IMovable, Comparable<Villager>{
 	 * Compares two Villagers by their wealth attribute.
 	 * Note: this comparator imposes orderings that are inconsistent with equals.
 	 * @param o1 Villager Object
-	 * @param o2 Vilalger object
 	 * @return 1 if first argument is of greater wealth greater than second -
 	 *		   0 if both arguments are of the same wealth -
 	 *		   -1 if first argument is of less wealth than second

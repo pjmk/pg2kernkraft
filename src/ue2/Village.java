@@ -148,8 +148,8 @@ public class Village {
 	}
 	
 	/**
-	 * Return name of the village, amount of houses & inhabitants.
-	 * @return name of the village, amount of houses & inhabitants
+	 * Return name of the village, amount of houses and inhabitants.
+	 * @return name of the village, amount of houses and inhabitants
 	 */
 	
 	public String toString(){
