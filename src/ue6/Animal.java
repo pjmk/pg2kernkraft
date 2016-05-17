@@ -113,7 +113,7 @@ public abstract class Animal implements IMovable{
 	public void setCoordinates() {
 		this.xCoordinate = (int) (100 * Math.random());
 		this.yCoordinate = (int) (100 * Math.random());
-		logCoordinates();
+		//logCoordinates();
 	}
 
 	/**

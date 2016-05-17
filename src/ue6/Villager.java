@@ -149,7 +149,7 @@ public class Villager implements IMovable, Comparable<Villager>{
 	public void setCoordinates() {
 		this.xCoordinate = (int) (100 * Math.random());
 		this.yCoordinate = (int) (100 * Math.random());
-		logCoordinates();
+		//logCoordinates();
 	}
 
 	/**

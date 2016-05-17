@@ -93,10 +93,15 @@ public class Cage implements IMovable{
 		System.out.println("Cage:" +  "X-COORDINATE:" + getXCoordinate() + ";Y-COORDINATE:" + getYCoordinate());
 		
 	}
-	
-	
-	
-	
+
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "Cage [cageContent=" + cageContent + ", capacity=" + capacity + ", currentWeight=" + currentWeight
+				+ ", xCoordinate=" + xCoordinate + ", yCoordinate=" + yCoordinate + "]";
+	}
 	
 	
 
