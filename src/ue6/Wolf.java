@@ -12,7 +12,7 @@ package ue6;
 
 public class Wolf extends WildAnimal implements ICatchable{
 	private boolean isRaging = false;
-	int weight;
+	private int weight;
 	
 	/**
 	 * Generates Wolf object. Input must be a special string containing all information.

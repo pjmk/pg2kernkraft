@@ -13,9 +13,9 @@ import java.util.NoSuchElementException;
  */
 
 public class CageIterator<T extends Animal> implements Iterator<T> {
-	int index;
-	ArrayList<T> animals;
-	int nextCounter = 0;
+	private int index;
+	private ArrayList<T> animals;
+	private int nextCounter = 0;
 	
 	/**
 	 * Generates CageIterator object.
