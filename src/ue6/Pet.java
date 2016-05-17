@@ -8,7 +8,7 @@ package ue6;
  *
  */
 
-public abstract class Pet extends Animal implements ISlaughterable{
+public abstract class Pet extends Animal implements ISlaughterable, ICatchable{
 	private String name;
 	private Villager owner;
 	

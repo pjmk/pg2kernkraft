@@ -10,7 +10,7 @@ package ue6;
  *
  */
 
-public class Wolf extends WildAnimal {
+public class Wolf extends WildAnimal implements ICatchable{
 	private boolean isRaging = false;
 	
 	/**

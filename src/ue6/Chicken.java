@@ -10,6 +10,7 @@ package ue6;
 public class Chicken extends Pet {
 	private boolean isCackling = false;
 	private int eggsLaid = 0;
+	private int weight;
 	
 	/**
 	 * Generates Chicken object.
@@ -101,6 +102,14 @@ public class Chicken extends Pet {
 	 */
 	public int getEggsLaid() {
 		return eggsLaid;
+	}
+	
+	public int getWeight() {
+		return weight;
+	}
+	
+	public void setWeight() {
+		weight = (int) Math.floor(Math.random() * AnimalEnum.CHICKEN.getMaxWeight() + 1);
 	}
 	
 	@Override
