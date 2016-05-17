@@ -1,5 +1,4 @@
 package ue6;
-
 import java.util.Iterator;
 
 /**
@@ -8,7 +7,6 @@ import java.util.Iterator;
  * @author Paul Jureschek, Michael Kinzkofer
  *
  */
-
 
 public class KernTest_ue6 {
 	public static void main(String[] args) {
@@ -94,7 +92,6 @@ public class KernTest_ue6 {
 			System.out.println(iti3.next());
 		}
 		// test passed successfully
-		
-		
+				
 	}
 }

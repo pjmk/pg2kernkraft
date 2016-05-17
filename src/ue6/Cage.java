@@ -5,7 +5,7 @@ import java.util.Iterator;
 /**
  * The generic class Cage can contain different kinds of catchable Animals.
  * 
- * @author Michael Kinzkofer, Paul Jureschek
+ * @author Michael Kinzkofer
  *
  */
 public class Cage <T extends Animal> implements IMovable, Iterable<T>{
