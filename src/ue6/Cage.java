@@ -127,8 +127,8 @@ public class Cage <T extends Animal> implements IMovable, Iterable<T>{
 	}
 
 	
-	/* (non-Javadoc)
-	 * @see java.lang.Object#toString()
+	/**
+	 * returns a String with the content, capacity and position of the cage.
 	 */
 	@Override
 	public String toString() {
