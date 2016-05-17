@@ -15,10 +15,6 @@ public class KernTest_ue6 {
 	public static void main(String[] args) {
 		System.out.println("List of Creatures with their coordinates:\n");
 
-		Biome biome;
-		ArrayList <Villager> forbes = new ArrayList<Villager>(); // needed for ue5 - comparator test
-
-
 		// read world
 		WorldUtilities worldutilities = new WorldUtilities();
 		World world =  worldutilities.readWorldFromFile("input_file/ue6/weltMitTieren.txt");
