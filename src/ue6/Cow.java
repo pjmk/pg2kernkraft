@@ -10,7 +10,7 @@ import java.util.Iterator;
  */
 
 public class Cow extends Pet {
-	int weight;
+	private int weight;
 	
 	/**
 	 * Generates Cow object.
