@@ -11,8 +11,7 @@ import java.util.Iterator;
 public class Cage <T extends Animal> implements IMovable, Iterable<T>{
 	private static final int maxCageContent =  2200;
 	private  ArrayList<T>  cageContent = new ArrayList<T>();
-	private int capacity, currentWeight, xCoordinate, yCoordinate;
-	
+	private int capacity, currentWeight, xCoordinate, yCoordinate;	
 	
 	/**
 	 * creates new cage with max. capacity 
@@ -29,8 +28,7 @@ public class Cage <T extends Animal> implements IMovable, Iterable<T>{
 	public Cage(int capacity) {
 		this.capacity = capacity;
 		this.setCoordinates();
-	}
-	
+	}	
 	
 	/**
 	 * Put an animal in the cage.
@@ -98,7 +96,6 @@ public class Cage <T extends Animal> implements IMovable, Iterable<T>{
 		//logCoordinates();	
 	}
 	
-	
 	/**
 	 * Returns x-coordinate of the Cage.
 	 * @return x-coordinate of the Cage
@@ -125,7 +122,6 @@ public class Cage <T extends Animal> implements IMovable, Iterable<T>{
 		System.out.println("Cage:" +  "X-COORDINATE:" + getXCoordinate() + ";Y-COORDINATE:" + getYCoordinate());
 		
 	}
-
 	
 	/**
 	 * returns a String with the content, capacity and position of the cage.
