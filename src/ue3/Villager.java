@@ -28,6 +28,7 @@ public class Villager {
 	 * @param name name of Villager
 	 * @param gender gender of Villager
 	 * @param age age of Villager
+	 * @param profession profession of Villager
 	 */
 	
 	public Villager(String name, Gender gender, int age, Profession profession) {

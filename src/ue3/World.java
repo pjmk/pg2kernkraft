@@ -53,6 +53,8 @@ public class World {
 	
 	/**
 	 * get Biome slot from array Biome[][]
+	 * @param x x coordinate
+	 * @param y y coordinate
 	 * @return Biome slot from array Biome[][]
 	 */
 

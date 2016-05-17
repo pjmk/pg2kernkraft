@@ -16,7 +16,7 @@ public class Meat {
 	/**
 	 * Generates Meat object.
 	 * 
-	 * @param maxWeight maxWeight of meat 
+	 * @param meatMaxWeight maxWeight of meat 
 	 * @param daysTillSpoil Days till the meat starts to spoil
 	 * @param type type of meat e.g. chicken, cow...
 	 */
