@@ -55,7 +55,9 @@ public class Cage <T extends Animal> implements IMovable, Iterable<T>{
 					cageIterator = iterator();
 					
 					while(cageIterator.hasNext()) {
-						if (cageIterator.next() instanceof Chicken) {
+						ICatchable currentAnimal = (ICatchable) cageIterator.next();
+						if (currentAnimal instanceof Chicken) {
+							this.currentWeight -= currentAnimal.getWeight(); 
 							cageIterator.remove();
 							System.out.println("Oh the wolf killed a chicken in the cage, bad decision bro");
 						}
