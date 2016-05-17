@@ -11,6 +11,7 @@ package ue6;
 
 public class KernTest_ue6 {
 	public static void main(String[] args) {
+		System.out.println("List of Creatures with their coordinates:\n");
 
 		// read world
 		WorldUtilities worldutilities = new WorldUtilities();
@@ -18,11 +19,5 @@ public class KernTest_ue6 {
 
 		// Save the World again
 		worldutilities.writeWorldToFile(world, "output_file/ue6/weltMitTieren.txt");
-		
-		System.out.println(world.getBiome()[0][0]);
-		
-		Cage cage1 = new Cage();
-		
-		
 	}
 }

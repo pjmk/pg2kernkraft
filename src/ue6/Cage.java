@@ -4,12 +4,13 @@
 package ue6;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 /**
  * @author Michael Kinzkofer
  *
  */
-public class Cage <T extends Animal> implements IMovable{
+public class Cage <T extends Animal> implements IMovable, Iterable<T>{
 	private static final int maxCageContent =  2200;
 	private  ArrayList<T>  cageContent;
 	private int capacity, currentWeight, xCoordinate, yCoordinate;
@@ -105,6 +106,13 @@ public class Cage <T extends Animal> implements IMovable{
 		return "Cage [cageContent=" + cageContent + ", capacity=" + capacity + ", currentWeight=" + currentWeight
 				+ ", xCoordinate=" + xCoordinate + ", yCoordinate=" + yCoordinate + "]";
 	}
+
+	@Override
+	public Iterator<T> iterator() {
+		
+		return null;
+	}
+
 	
 	
 

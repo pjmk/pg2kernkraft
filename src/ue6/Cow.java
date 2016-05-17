@@ -1,5 +1,7 @@
 package ue6;
 
+import java.util.Iterator;
+
 /**
  * This class generates Cows.
  * 
@@ -8,6 +10,7 @@ package ue6;
  */
 
 public class Cow extends Pet {
+	int weight;
 	
 	/**
 	 * Generates Cow object.
@@ -21,6 +24,8 @@ public class Cow extends Pet {
 		super(color, age, name, owner);
 		// set the typical max weight ( which is saved in AnimalEnum) 
 		this.setMaxWeight(AnimalEnum.COW.getMaxWeight());
+		//Set Weight;
+		setWeight();
 		
 	}
 	
@@ -49,8 +54,22 @@ public class Cow extends Pet {
 		this.getOwner().addPet(this);
 		// set the typical max weight ( which is saved in AnimalEnum) 
 		this.setMaxWeight(AnimalEnum.CAMEL.getMaxWeight());
+		//Set Weight;
+		setWeight();
 	}
 
+	public int getWeight() {
+		return weight;
+	}
+	
+	/**
+	 * Sets weight of Animal to something between 1 and defined maxWeight in AnimalEnum.
+	 */
+	public void setWeight() {
+		weight = (int) Math.floor(Math.random() * AnimalEnum.COW.getMaxWeight() + 1);
+	}
+	
+	
 	/**
 	 * This Method makes the cow milk.
 	 */
@@ -91,6 +110,4 @@ public class Cow extends Pet {
 	public void logCoordinates() {
 		System.out.println("COW:" + "X-COORDINATE:" + getXCoordinate() + ";Y-COORDINATE:" + getYCoordinate());	
 	}
-	
-	
 }
