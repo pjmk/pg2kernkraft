@@ -20,7 +20,8 @@ public class Cage <T extends Animal> implements IMovable, Iterable<T>{
 	 * creates new cage with max. capacity 
 	 */
 	public Cage() {
-		this.capacity = maxCageContent;	
+		this.capacity = maxCageContent;
+		this.setCoordinates();
 	}
 	
 	/**
@@ -29,6 +30,7 @@ public class Cage <T extends Animal> implements IMovable, Iterable<T>{
 	 */
 	public Cage(int capacity) {
 		this.capacity = capacity;
+		this.setCoordinates();
 	}
 	
 	
@@ -45,6 +47,21 @@ public class Cage <T extends Animal> implements IMovable, Iterable<T>{
 		else {
 			this.currentWeight += ((ICatchable) animal).getWeight();
 			cageContent.add((T)animal);
+			
+			Iterator<T> cageIterator = iterator();
+			
+			while(cageIterator.hasNext()) {
+				if (cageIterator.next() instanceof Wolf) {
+					cageIterator = iterator();
+					
+					while(cageIterator.hasNext()) {
+						if (cageIterator.next() instanceof Chicken) {
+							cageIterator.remove();
+							System.out.println("Oh the wolf killed a chicken in the cage, bad decision bro");
+						}
+					}
+				}
+			}
 		}
 	}
 	
@@ -67,7 +84,7 @@ public class Cage <T extends Animal> implements IMovable, Iterable<T>{
 	public void setCoordinates() {
 		this.xCoordinate = (int) (100 * Math.random());
 		this.yCoordinate = (int) (100 * Math.random());
-		logCoordinates();	
+		//logCoordinates();	
 	}
 	
 	

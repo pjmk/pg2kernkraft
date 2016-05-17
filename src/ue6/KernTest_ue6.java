@@ -1,6 +1,6 @@
 package ue6;
 
-import javax.swing.text.html.HTMLDocument.Iterator;
+import java.util.Iterator;
 
 /**
  * Main for testing current project.
@@ -42,6 +42,12 @@ public class KernTest_ue6 {
 		
 		
 		
+		
+		Iterator<Animal> iti = cage1.iterator();
+		
+		while(iti.hasNext()) {
+			System.out.println(iti.next());
+		}
 		
 		
 	}
