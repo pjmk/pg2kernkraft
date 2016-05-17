@@ -39,7 +39,7 @@ public abstract class Animal implements IMovable{
 	
 	/**
 	 * Sets color of animal.
-	 * @param color color of animal
+	 * @param color2 color of animal
 	 */
 	protected void setColor(Color color) {
 		this.color = color;
