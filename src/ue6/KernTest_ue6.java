@@ -1,5 +1,6 @@
 package ue6;
 
+import java.util.Iterator;
 
 /**
  * Main for testing current project.
@@ -27,6 +28,12 @@ public class KernTest_ue6 {
 		cage1.putInCage(world.getBiome()[0][0].getVillage()[0].getVillager()[2].getPets()[0]);
 		cage1.putInCage(world.getBiome()[0][0].getVillage()[0].getVillager()[2].getPets()[1]);
 		System.out.println(cage1.toString());
+		
+		Iterator<Animal> iti = cage1.iterator();
+		
+		while(iti.hasNext()) {
+			System.out.println(iti.next());
+		}
 		
 		
 	}
