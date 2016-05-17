@@ -47,29 +47,36 @@ public class Cage <T extends Animal> implements IMovable, Iterable<T>{
 		else {
 			this.currentWeight += ((ICatchable) animal).getWeight();
 			cageContent.add((T)animal);
-			
-			Iterator<T> cageIterator = iterator();
-			
-			while(cageIterator.hasNext()) {
-				/* test cage containing wolf */
-				if (cageIterator.next() instanceof Wolf) {
-					/* restart */
-					cageIterator = iterator();
+			checkWolfEatsChicken();
 					
-					while(cageIterator.hasNext()) {
-						/* wolf kills chicken */
-						ICatchable currentAnimal = (ICatchable) cageIterator.next();
-						if (currentAnimal instanceof Chicken) {
-							this.currentWeight -= currentAnimal.getWeight(); 
-							cageIterator.remove();
-							System.out.println("Oh the wolf killed a chicken, bad decision bro");
-						}
-					}
-					break;
-				}
-			}
 		}
 	}
+	
+	/**
+	 * Check whether a wolf eats the chicken in the cage.
+	 */
+	private void checkWolfEatsChicken(){
+		Iterator<T> cageIterator = iterator();
+		
+		while(cageIterator.hasNext()) {
+			/* test cage containing wolf */
+			if (cageIterator.next() instanceof Wolf) {
+				/* restart */
+				cageIterator = iterator();
+				
+				while(cageIterator.hasNext()) {
+					/* wolf kills chicken */
+					ICatchable currentAnimal = (ICatchable) cageIterator.next();
+					if (currentAnimal instanceof Chicken) {
+						this.currentWeight -= currentAnimal.getWeight(); 
+						cageIterator.remove();
+						System.out.println("Oh the wolf killed a chicken, bad decision bro");
+					}
+				}
+				break;
+			}
+		}
+	}	
 	
 	/**
 	 *  set the coordinates of the Cage.
