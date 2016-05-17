@@ -31,6 +31,17 @@ public class Cage <T> implements IMovable{
 	}
 	
 	
+	/**
+	 * Put a animal in the cage.
+	 * @param animal animal which should be put in the cage
+	 */
+	public void putInCage(T animal){
+		if(currentWeight + animal.getWeight() > capacity)
+			System.out.println("cage is full! animal does not fit in ");
+		else 
+			cageContent.add(animal);
+	}
+	
 	
 	/**
 	 *  set the coordinates of the Cage.
