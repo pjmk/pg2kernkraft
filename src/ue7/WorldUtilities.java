@@ -14,7 +14,7 @@ import java.util.Scanner;
 */
 
 public class WorldUtilities {
-	private static final int NUM_VILLAGES_OVERALL = 50;
+	private static final int NUM_VILLAGES_OVERALL = 500;
 	private int currentBiomeX;
 	private int currentBiomeY;
 	private int currentVillage;

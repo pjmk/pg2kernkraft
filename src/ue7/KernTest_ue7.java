@@ -18,5 +18,9 @@ public class KernTest_ue7 {
 		// Save the World again
 		worldutilities.writeWorldToFile(world, "output_file/ue7/weltMitTieren.txt");
 		
+		// test population
+		System.out.println(world.getBiome(0, 0).getVillage().get(0).getName());
+		System.out.println(world.getBiome(0, 0).getVillage().get(0).getPopulation());
+		System.out.println(world.getBiome(0, 0).getVillage().get(0).getVillager().size());
 	}
 }
