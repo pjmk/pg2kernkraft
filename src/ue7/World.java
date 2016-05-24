@@ -159,9 +159,7 @@ public class World implements Iterator<Biome> {
 						continue;
 					}
 					//Now get the Villager
-					for (int z = 0; z < this.getBiome(i, k).getVillage()[j].getVillager().size(); z++) {
-						return this.getBiome(i, k).getVillage()[j].getVillager().get(name);
-					}
+					return this.getBiome(i, k).getVillage()[j].getVillager().get(name);
 				}
 			}
 		}
