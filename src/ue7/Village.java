@@ -61,8 +61,8 @@ public class Village {
 	}
 	
 	/**
-	 * Returns Villager[] array.
-	 * @return Villager[] array
+	 * Returns Villager map.
+	 * @return Villager map
 	 */
 	
 	public Map<String, Villager> getVillager() {
