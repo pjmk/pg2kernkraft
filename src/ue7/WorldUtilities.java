@@ -126,7 +126,7 @@ public class WorldUtilities {
 											Villager villager = new Villager(row);
 											world.getBiome()[currentBiomeX][(currentBiomeY % 5) - 1]
 													.getVillage()[currentVillage - 1]
-															.getVillager()[currentVillager] = villager;
+															.getVillager().put(villager.getName(), villager);
 											currentVillager++;
 											break;
 											
@@ -203,9 +203,7 @@ public class WorldUtilities {
 						writer.write(world.getBiome()[i][j].getVillage()[k].toString());			
 					
 						// loop for villager[] array
-						for(Villager villager : world.getBiome()[i][j].getVillage()[k].getVillager()){
-							if (villager == null)
-								break;
+						for(Villager villager : world.getBiome()[i][j].getVillage()[k].getVillager().values()){
 							
 							writer.newLine();
 							writer.write(villager.toString());
