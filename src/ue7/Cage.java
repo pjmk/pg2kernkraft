@@ -133,12 +133,11 @@ public class Cage <T extends Animal> implements IMovable, Iterable<T>{
 	}
 
 	/**
-	 * Generates Iterator for this cage object and returns it.
-	 * @return cageIterator
+	 * Returns iterator for Animals in cage.
+	 * @return iterator over animals in cage
 	 */
 	@Override
 	public Iterator<T> iterator() {
-		CageIterator<T> cageIterator = new CageIterator<T>(cageContent);
-		return cageIterator;
+		return cageContent.iterator();
 	}
 }
