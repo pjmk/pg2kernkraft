@@ -19,6 +19,12 @@ public class Villager implements IMovable, Comparable<Villager>{
 	private int age, xCoordinate, yCoordinate;
 	private final static int MAX_WEALTH = 1000;
 	private int wealth;
+	/*
+	 * We decided to choose an array list. 
+	 * The main reason is, we wanted a ordered and dynamic data structure.
+	 * This guarantees the same sequence every time the world is saved or red.
+	 * Furthermore it is possible to work with indices.
+	 */
 	private List<Pet> pets = new ArrayList<>();
 
 	/**
