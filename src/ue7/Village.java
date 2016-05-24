@@ -1,5 +1,8 @@
 package ue7;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
 *
 * The class Village describes a Village with name, population, amount of houses and a mayor.
@@ -16,7 +19,8 @@ public class Village {
 	private int amountHouses;
 	private int population;
 	private Villager mayor;
-	private Villager[] villager;
+	//HashMap because we want to identify a villager by its name
+	private Map<String, Villager> villager = new HashMap<>(); // Key: name
 	
 	/**
 	 * Generates new Village.
@@ -38,7 +42,6 @@ public class Village {
 											break;
 			}
 		}
-		setVillager(new Villager [MAX_NUM_VILLAGER]);
 	}
 	
 	/**
@@ -62,7 +65,7 @@ public class Village {
 	 * @return Villager[] array
 	 */
 	
-	public Villager[] getVillager() {
+	public Map<String, Villager> getVillager() {
 		return villager;
 	}
 
@@ -198,7 +201,7 @@ public class Village {
 	 * @param villager Villager[] array
 	 */
 	
-	private void setVillager(Villager[] villager) {
+	private void setVillager(Map<String, Villager> villager) {
 		this.villager = villager;
 	}
 }
