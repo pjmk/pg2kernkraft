@@ -197,8 +197,8 @@ public class Village {
 	}
 
 	/**
-	 * Set the array villager
-	 * @param villager Villager[] array
+	 * Set the map villager
+	 * @param villager Map<String, Villager> 
 	 */
 	
 	private void setVillager(Map<String, Villager> villager) {
