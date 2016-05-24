@@ -100,8 +100,8 @@ public class Villager implements IMovable, Comparable<Villager>{
 	}
 
 	/**
-	 * Returns pets array owned by Villager.
-	 * @return pets owned by Villager
+	 * Returns pets owned by Villager.
+	 * @return array list of pets owned by Villager
 	 */
 	public List<Pet> getPets() {
 		return pets;
