@@ -59,6 +59,7 @@ public class Chicken extends Pet {
 			}
 		}
 		// Add Chicken to Villager
+		System.out.println("ONWER OF : " + this.getName() + " is: " + this.getOwner());
 		this.getOwner().addPet(this);
 		//Set Weight;
 		setWeight();
