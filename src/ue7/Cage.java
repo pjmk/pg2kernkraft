@@ -5,11 +5,12 @@ import java.util.Iterator;
 /**
  * The generic class Cage can contain different kinds of catchable Animals.
  * 
- * @author Michael Kinzkofer
+ * @author Michael Kinzkofer, Paul Jureschek
  *
  */
 public class Cage <T extends Animal> implements IMovable, Iterable<T>{
 	private static final int maxCageContent =  2200;
+	// ArrayList because we sometimes need to delete elements in the middle
 	private  ArrayList<T>  cageContent = new ArrayList<T>();
 	private int capacity, currentWeight, xCoordinate, yCoordinate;	
 	
