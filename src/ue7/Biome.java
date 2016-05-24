@@ -1,6 +1,8 @@
 package ue7;
 
+import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 import java.util.NoSuchElementException;
 
 /**
@@ -13,16 +15,19 @@ import java.util.NoSuchElementException;
 */
 
 
-public class Biome implements Iterator<Village>{
-	private static final int MAX_NUM_VILLAGES = 20;
+public class Biome implements Iterable<Village>{
 	private String name;
 	private Nature nature;
-	private int amountVillages;
-	private Village[] village;
+	/*
+	 * We decided to choose an array list. 
+	 * The main reason is, we wanted a ordered and dynamic data structure.
+	 * This guarantees the same sequence every time the world is saved or red.
+	 * Furthermore it is possible to work with indices.
+	 */
+	private List<Village> villageList =  new ArrayList<>();;
 	private final int MAX_NUM_ANIMALS = 20; // Because we don't know dynamic arrays yet
 	private WildAnimal animals[] = new WildAnimal[MAX_NUM_ANIMALS];
 	
-	private int index = 0; // For Iterator implementation
 	
 	/**
 	 * Generates new Biome.
@@ -33,7 +38,6 @@ public class Biome implements Iterator<Village>{
 	public Biome(String name, Nature nature) {
 		this.name = name;
 		this.nature = nature;
-		setVillage(new Village [MAX_NUM_VILLAGES]);
 	}
 	
 	/**
@@ -52,7 +56,6 @@ public class Biome implements Iterator<Village>{
 										break;							
 			}
 		}
-		setVillage(new Village [MAX_NUM_VILLAGES]);
 	}
 
 	/**
@@ -64,22 +67,15 @@ public class Biome implements Iterator<Village>{
 		return name;
 	}
 	
-	/**
-	 * Returns constant MAX number of Villages.
-	 * @return constant MAX number of Villages
-	 */
-	
-	public static int getMaxNumVillages() {
-		return MAX_NUM_VILLAGES;
-	}
+
 
 	/**
 	 * Returns Village saved in Biome (built on Biome).
 	 * @return Village saved in Biome (built on Biome)
 	 */
 	
-	public Village[] getVillage() {
-		return village;
+	public List<Village> getVillage() {
+		return villageList;
 	}
 
 	/**
@@ -88,12 +84,7 @@ public class Biome implements Iterator<Village>{
 	 */
 	
 	public void addVillage(Village village) {
-		if (amountVillages >= 20) {
-			System.out.println("Too many villages on biome");
-			return;
-		}
-		this.village[amountVillages] = village;
-		amountVillages++;
+		villageList.add(village);
 	}
 	
 	/**
@@ -118,7 +109,7 @@ public class Biome implements Iterator<Village>{
 	 * @return the amountVillages
 	 */
 	public int getAmountVillages() {
-		return amountVillages;
+		return villageList.size();
 	}
 
 	/**
@@ -126,9 +117,9 @@ public class Biome implements Iterator<Village>{
 	 * @param village Village[] array
 	 */
 	
-	private void setVillage(Village[] village) {
-		this.village = village;
-	}
+	//private void setVillage(Village[] village) {
+	//	this.village = village;
+	//}
 	
 	/**
 	 * Adds WildAnimal to this Biome. 
@@ -144,56 +135,9 @@ public class Biome implements Iterator<Village>{
 		System.out.println("No more WildAnimals allowed on this Biome");
 	}
 
-	/**
-	 * Returns current index used by iterator to iterator over village[].
-	 * @return the current index for iterator
-	 */
-	public int getIndex() {
-		return index;
-	}
-
-	/**
-	 * Reset index, so iterator can go over everything again.
-	 * Sets index used by Iterator implementation to 0.
-	 */
-	public void resetIndex() {
-		index = 0;
-	}
-
-	/**
-	 * Returns animals living on this Biome right now.
-	 * @return animals living on this Biome right now
-	 */
-	public WildAnimal[] getAnimals() {
-		return animals;
-	}
-
-	/**
-	 * Checks if there is another Village after the current index or not.
-	 * @return whether there is another Village after the index or not as boolean
-	 */
 	@Override
-	public boolean hasNext() {
-		if (village[index] == null || village.length == index) {
-			return false;
-		} else {
-			return true;
-		}
+	public Iterator<Village> iterator() {
+		return villageList.iterator();
 	}
-	
-	/**
-	 * Returns Village object from village[] at current index. 
-	 * Additionally it increments index if there is an village after the current index.
-	 * @return Village object
-	 */
-	@Override
-	public Village next() {
-		int oldIndex = index;
-		if (hasNext()) {
-			index++;
-			return village[oldIndex];
-		} else {
-			throw new NoSuchElementException("No further village in array at position: village[" + index + "]");
-		}
-	}
+
 }

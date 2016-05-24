@@ -42,6 +42,7 @@ public class Village {
 											break;
 			}
 		}
+		setVillager(new Villager [MAX_NUM_VILLAGER]);
 	}
 	
 	/**
