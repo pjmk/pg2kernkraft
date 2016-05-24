@@ -24,10 +24,8 @@ public class Biome implements Iterable<Village>{
 	 * This guarantees the same sequence every time the world is saved or red.
 	 * Furthermore it is possible to work with indices.
 	 */
-	private List<Village> villageList =  new ArrayList<>();;
-	private final int MAX_NUM_ANIMALS = 20; // Because we don't know dynamic arrays yet
-	private WildAnimal animals[] = new WildAnimal[MAX_NUM_ANIMALS];
-	
+	private List<Village> villageList =  new ArrayList<>();
+	private List<WildAnimal> wildAnimalList =  new ArrayList<>();
 	
 	/**
 	 * Generates new Biome.
@@ -111,28 +109,21 @@ public class Biome implements Iterable<Village>{
 	public int getAmountVillages() {
 		return villageList.size();
 	}
-
-	/**
-	 * Set the array village.
-	 * @param village Village[] array
-	 */
 	
-	//private void setVillage(Village[] village) {
-	//	this.village = village;
-	//}
+	/**
+	 * Returns list of wild animals.
+	 * @return array list of wild animals
+	 */
+	public List<WildAnimal> getAnimals() {
+		return wildAnimalList;
+	}
 	
 	/**
 	 * Adds WildAnimal to this Biome. 
 	 * @param animal WildAnimal to be added to this Biome
 	 */
 	public void addWildAnimal(WildAnimal animal) {		
-		for (int i = 0; i < MAX_NUM_ANIMALS; i++) {
-			if (animals[i] == null) {
-				animals[i] = animal;
-				return;
-			}	
-		}
-		System.out.println("No more WildAnimals allowed on this Biome");
+		wildAnimalList.add(animal);
 	}
 
 	@Override

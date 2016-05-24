@@ -14,7 +14,7 @@ import java.util.Scanner;
 */
 
 public class WorldUtilities {
-	private static final int NUM_VILLAGES_OVERALL = Biome.getMaxNumVillages() * World.getMaxNumBiomes() *  World.getMaxNumBiomes();
+	private static final int NUM_VILLAGES_OVERALL = 50;
 	private int currentBiomeX;
 	private int currentBiomeY;
 	private int currentVillage;
@@ -106,7 +106,7 @@ public class WorldUtilities {
 												// creates new village
 												Village village = new Village(row);
 												world.getBiome()[currentBiomeX][currentBiomeY - 1]
-														.getVillage()[currentVillage] = village;
+														.getVillage().add(village);
 												/*
 												 *  corrects the index of village[],villagePopulation[]
 												 *   and villager[] array
@@ -124,9 +124,8 @@ public class WorldUtilities {
 											 *  the index of villager[] array
 											 */
 											Villager villager = new Villager(row);
-											world.getBiome()[currentBiomeX][(currentBiomeY % 5) - 1]
-													.getVillage()[currentVillage - 1]
-															.getVillager().put(villager.getName(), villager);
+											world.getBiome()[currentBiomeX][(currentBiomeY % 5) - 1].getVillage().get(currentVillage - 1).
+											getVillager().put(villager.getName(), villager);
 											currentVillager++;
 											break;
 											
@@ -185,25 +184,18 @@ public class WorldUtilities {
 					writer.write(world.getBiome()[i][j].toString());
 					
 					//loop for (wild) animals[] array
-					for (int z = 0; z < world.getBiome(i, j).getAnimals().length; z++) {
-						if (world.getBiome(i, j).getAnimals()[z] == null) {
-							break;
-						}
-						
+					for (WildAnimal animal: world.getBiome(i, j).getAnimals()) {
 						writer.newLine();
-						writer.write(world.getBiome(i, j).getAnimals()[z].toString());
+						writer.write(animal.toString());
 					}
 					
 					// loop for village[] array
-					for(int k = 0; k < world.getBiome()[i][j].getVillage().length; k++ ) {
-						if (world.getBiome()[i][j].getVillage()[k] == null)
-							break;
-						
+					for (Village village: world.getBiome(i, j).getVillage()){
 						writer.newLine();
-						writer.write(world.getBiome()[i][j].getVillage()[k].toString());			
-					
+						writer.write(village.toString());			
+
 						// loop for villager[] array
-						for(Villager villager : world.getBiome()[i][j].getVillage()[k].getVillager().values()){
+						for(Villager villager : village.getVillager().values()){
 							
 							writer.newLine();
 							writer.write(villager.toString());
