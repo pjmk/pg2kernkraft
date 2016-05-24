@@ -1,6 +1,8 @@
 package ue7;
 
 import java.lang.Comparable;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * The class Villager describes one Villager.
@@ -15,10 +17,9 @@ public class Villager implements IMovable, Comparable<Villager>{
 	private Profession profession;
 	private Gender gender;
 	private int age, xCoordinate, yCoordinate;
-	private final static int MAX_NUM_PETS = 10; //Just used because we don't know dynamic arrays yet
 	private final static int MAX_WEALTH = 1000;
 	private int wealth;
-	private Pet[] pets = new Pet[MAX_NUM_PETS];
+	private List<Pet> pets = new ArrayList<>();
 
 	/**
 	 * Generates new Villager.
@@ -31,7 +32,8 @@ public class Villager implements IMovable, Comparable<Villager>{
 		String[] inputData = row.split(";|\\:");
 		for (int i = 0; i < inputData.length; i += 2) {
 			switch(inputData[i]) {
-				case Keywords.VILLAGER:		this.name = inputData[i + 1];
+				case Keywords.VILLAGER:		System.out.println("NAme of villager: '" + inputData[i + 1] + "'");
+											this.name = inputData[i + 1];
 											break;
 				case Keywords.GENDER:		this.gender = Gender.valueOf(inputData[i + 1].toUpperCase());
 											break;
@@ -95,30 +97,15 @@ public class Villager implements IMovable, Comparable<Villager>{
 	 * @param pet pet to be added
 	 */
 	public void addPet(Pet pet) {
-		for (int i = 0; i < MAX_NUM_PETS; i++) {
-			if (pets[i] == null) {
-				pets[i] = pet;
-				return;
-			}
-		}
-		System.out.println("No more pets allowed on this villager");
+		pets.add(pet);
 	}
 
 	/**
 	 * Returns pets array owned by Villager.
 	 * @return pets owned by Villager
 	 */
-	public Pet[] getPets() {
+	public List<Pet> getPets() {
 		return pets;
-	}
-
-	/**
-	 * Returns max number of pets.
-	 * @return max number of pets
-	 */
-
-	public static int getMaxNumPets() {
-		return MAX_NUM_PETS;
 	}
 
 	/**

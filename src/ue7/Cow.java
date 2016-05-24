@@ -89,11 +89,11 @@ public class Cow extends Pet {
 	public Meat slaughter() {
 		Meat meat = new Meat(weight, AnimalEnum.COW.getDaysTillSpoil(),
 					AnimalEnum.COW);
-		// Delete the animal in Pet[] in Villager
-		for(int i = 0; i < Villager.getMaxNumPets(); i++) {
-			Pet pet =  getOwner().getPets()[i];
+		// Delete the animal in Pet List in Villager
+		for(int i = 0; i < getOwner().getPets().size(); i++) {
+			Pet pet =  getOwner().getPets().get(i);
 			if (pet == this){
-				getOwner().getPets()[i] = null;
+				getOwner().getPets().remove(i);
 			}
 		}
 		return meat;
