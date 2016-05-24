@@ -65,11 +65,9 @@ public class Biome implements Iterable<Village>{
 		return name;
 	}
 	
-
-
 	/**
-	 * Returns Village saved in Biome (built on Biome).
-	 * @return Village saved in Biome (built on Biome)
+	 * Returns List of Villages saved in Biome (built on Biome).
+	 * @return List Village<Village> saved in Biome (built on Biome)
 	 */
 	
 	public List<Village> getVillage() {
@@ -98,6 +96,7 @@ public class Biome implements Iterable<Village>{
 	 * Returns nature on biome.
 	 * @return the nature
 	 */
+	
 	public Nature getNature() {
 		return nature;
 	}
@@ -106,6 +105,7 @@ public class Biome implements Iterable<Village>{
 	 * Returns number of Villages on biome.
 	 * @return the amountVillages
 	 */
+	
 	public int getAmountVillages() {
 		return villageList.size();
 	}
@@ -122,6 +122,7 @@ public class Biome implements Iterable<Village>{
 	 * Adds WildAnimal to this Biome. 
 	 * @param animal WildAnimal to be added to this Biome
 	 */
+	
 	public void addWildAnimal(WildAnimal animal) {		
 		wildAnimalList.add(animal);
 	}
@@ -130,5 +131,4 @@ public class Biome implements Iterable<Village>{
 	public Iterator<Village> iterator() {
 		return villageList.iterator();
 	}
-
 }
