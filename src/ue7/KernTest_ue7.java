@@ -18,6 +18,5 @@ public class KernTest_ue7 {
 		// Save the World again
 		worldutilities.writeWorldToFile(world, "output_file/ue7/weltMitTieren.txt");
 		
-				
 	}
 }

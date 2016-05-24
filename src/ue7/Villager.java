@@ -32,8 +32,7 @@ public class Villager implements IMovable, Comparable<Villager>{
 		String[] inputData = row.split(";|\\:");
 		for (int i = 0; i < inputData.length; i += 2) {
 			switch(inputData[i]) {
-				case Keywords.VILLAGER:		System.out.println("NAme of villager: '" + inputData[i + 1] + "'");
-											this.name = inputData[i + 1];
+				case Keywords.VILLAGER:		this.name = inputData[i + 1];
 											break;
 				case Keywords.GENDER:		this.gender = Gender.valueOf(inputData[i + 1].toUpperCase());
 											break;

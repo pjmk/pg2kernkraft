@@ -156,10 +156,15 @@ public class World implements Iterator<Biome> {
 				// Iterate over Villages	
 				for (Village village : this.getBiome(i, k).getVillage()) {
 					//Now get the Villager
-					return village.getVillager().get(name);
+					if (village.getVillager().get(name) == null) {
+						continue;
+					} else {
+						return village.getVillager().get(name);
+					}
 				}
 			}
 		}
+		System.out.println("Could not find Villager: " + name);
 		return null;
 	}
 
