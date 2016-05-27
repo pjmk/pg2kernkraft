@@ -1,6 +1,8 @@
 package ue8;
 
+import java.util.HashMap;
 import java.util.Iterator;
+import java.util.Map;
 import java.util.NoSuchElementException;
 
 /**
@@ -124,24 +126,45 @@ public class World implements Iterator<Biome> {
 	
 	/**
 	 * This method finds a Village by its name and doesn't care where in the world it is located.
-	 * @param name name of Village to Find
-	 * @return Village object with matching name
+	 * @param name name of Villages to Find
+	 * @return Map of Villages objects with matching name and their biome used as key.
 	 */
-	public Village getVillageByName(String name) {
+	public Map<Biome, Village> getBiomesVillagesByName(String name) {
+		Map<Biome, Village> villagesMap =  new HashMap<>();
 		// Iterate over x-axis 
 		for (int i = 0; i < MAX_NUM_BIOMES; i++) {
 			// Iterate over y-axis
 			for (int k = 0; k < World.getMaxNumBiomes(); k++) {
-				// Iterate over Villages	
-				for (Village village : this.getBiome(i, k).getVillages().values()) {
-					if(village.getName().equals(name)) {
-						return village;
+				// Iterate over Villages
+				if(this.getBiome(i, k) != null) {
+					for (Village village : this.getBiome(i, k).getVillages().values()) {
+						if(village.getName().equals(name)) {
+						villagesMap.put(this.getBiome(i, k), village);
+						}	
 					}
 				}
 			}
 		}
-		return null;
+		return villagesMap;
 	}
+	
+	public void logBiomesVillagesByNameToConsole(Map<Biome, Village> villagesMap){
+		Village village;
+		// Iterate over x-axis 
+		for (int i = 0; i < MAX_NUM_BIOMES; i++) {
+			// Iterate over y-axis
+			for (int k = 0; k < World.getMaxNumBiomes(); k++) {
+				// Use biomes as key to get villages with matching names	
+				village = villagesMap.get(this.getBiome(i, k));
+				if(village != null) {
+					System.out.println("Biome: " + this.getBiome(i, k).getName() + " has a village called "
+						+ village.getName() + " with " + village.getPopulation() + " villagers.");
+				}
+			}
+		}
+	}
+
+	
 	
 	/**
 	 * This method finds a Villager identified by its name and doesn't care where in the world it is located.

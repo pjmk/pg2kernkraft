@@ -13,14 +13,18 @@ public class KernTest_ue8 {
 
 		// read world
 		WorldUtilities worldutilities = new WorldUtilities();
-		World world =  worldutilities.readWorldFromFile("input_file/ue7/weltMitTieren.txt");
+		World world =  worldutilities.readWorldFromFile("input_file/ue8/welt_ue8.txt");
 
 		// Save the World again
 		worldutilities.writeWorldToFile(world, "output_file/ue8/weltMitTieren.txt");
 		
 		// test population
-		System.out.println(world.getBiome(0, 0).getVillages().get("Kerningen").getName());
-		System.out.println(world.getBiome(0, 0).getVillages().get("Kerningen").getPopulation());
-		System.out.println(world.getBiome(0, 0).getVillages().get("Kerningen").getVillager().size());
+		//System.out.println(world.getBiome(0, 0).getVillages().get("Kerningen").getName());
+		//System.out.println(world.getBiome(0, 0).getVillages().get("Kerningen").getPopulation());
+		//System.out.println(world.getBiome(0, 0).getVillages().get("Kerningen").getVillager().size());
+		
+		
+		world.logBiomesVillagesByNameToConsole(world.getBiomesVillagesByName("Kerningen"));
+		
 	}
 }
