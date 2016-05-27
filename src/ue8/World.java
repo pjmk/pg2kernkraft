@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.NoSuchElementException;
+import java.util.Set;
 
 /**
 *
@@ -148,21 +149,25 @@ public class World implements Iterator<Biome> {
 		return villagesMap;
 	}
 	
+	/**
+	 * This method finds a Village by its name and doesn't care where in the world it is located.
+	 * @param villagesMap Map of villages with matching
+	 * @return Map of Villages objects with matching name and their biome used as key.
+	 */
+	
 	public void logBiomesVillagesByNameToConsole(Map<Biome, Village> villagesMap){
+		Set<Biome> keyset = villagesMap.keySet();
 		Village village;
-		// Iterate over x-axis 
-		for (int i = 0; i < MAX_NUM_BIOMES; i++) {
-			// Iterate over y-axis
-			for (int k = 0; k < World.getMaxNumBiomes(); k++) {
-				// Use biomes as key to get villages with matching names	
-				village = villagesMap.get(this.getBiome(i, k));
-				if(village != null) {
-					System.out.println("Biome: " + this.getBiome(i, k).getName() + " has a village called "
-						+ village.getName() + " with " + village.getPopulation() + " villagers.");
-				}
+		
+		for (Biome biome : keyset) {
+			// Use biomes as key to get villages with matching names	
+			village = villagesMap.get(biome);
+			if(village != null) {
+				System.out.println("Biome: " + biome.getName() + " has a village called "						+ village.getName() + " with " + village.getPopulation() + " villagers.");
 			}
 		}
 	}
+
 
 	
 	
