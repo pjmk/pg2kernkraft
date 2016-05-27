@@ -130,6 +130,7 @@ public class World implements Iterator<Biome> {
 	 * @param name name of Villages to Find
 	 * @return Map of Villages objects with matching name and their biome used as key.
 	 */
+	
 	public Map<Biome, Village> getBiomesVillagesByName(String name) {
 		Map<Biome, Village> villagesMap =  new HashMap<>();
 		// Iterate over x-axis 
@@ -152,7 +153,6 @@ public class World implements Iterator<Biome> {
 	/**
 	 * This method finds a Village by its name and doesn't care where in the world it is located.
 	 * @param villagesMap Map of villages with matching
-	 * @return Map of Villages objects with matching name and their biome used as key.
 	 */
 	
 	public void logBiomesVillagesByNameToConsole(Map<Biome, Village> villagesMap){
@@ -167,14 +167,12 @@ public class World implements Iterator<Biome> {
 		}
 	}
 
-
-	
-	
 	/**
 	 * This method finds a Villager identified by its name and doesn't care where in the world it is located.
 	 * @param name name of Villager
 	 * @return Villager object with matching name
 	 */
+	
 	public Villager getVillagerByName(String name) {
 		// Iterate over x-axis
 		for (int i = 0; i < MAX_NUM_BIOMES; i++) {

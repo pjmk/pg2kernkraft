@@ -59,7 +59,7 @@ public abstract class WildAnimal extends Animal {
 
 	/**
 	 * Set current biome.
-	 * @param currBiome the Biome where the WildAnimal should be living at the moment 
+	 * @param curr the Biome where the WildAnimal should be living at the moment 
 	 */
 	protected void setCurrBiome(Biome curr) {
 		currBiome = curr;

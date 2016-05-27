@@ -69,7 +69,7 @@ public class Biome implements Iterable<Village>{
 	
 	/**
 	 * Returns Map of Villages saved in Biome (built on Biome).
-	 * @return Map Village<Village> saved in Biome (built on Biome)
+	 * @return Map Village saved in Biome (built on Biome)
 	 */
 	
 	public Map<String, Village> getVillages() {

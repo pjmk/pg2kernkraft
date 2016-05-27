@@ -64,7 +64,7 @@ public class World {
 	
 	/**
 	 * Set the array biomes
-	 * @param biomes Biome[] array
+	 * @param biome Biome[] array
 	 */
 	
 	private void setBiome(Biome[][] biome) {
