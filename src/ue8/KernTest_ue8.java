@@ -1,5 +1,4 @@
 package ue8;
-import java.util.Iterator;
 
 /**
  * Main for testing current project.

@@ -18,7 +18,6 @@ public class WorldUtilities {
 	private int currentBiomeX;
 	private int currentBiomeY;
 	private String currentVillage;
-	private int currentVillager;
 	private static int villageNum;
 	private World world = null;
 	private static int villagePopulation[] = new int[NUM_VILLAGES_OVERALL];
@@ -111,7 +110,6 @@ public class WorldUtilities {
 												 *  corrects the index of village[],villagePopulation[]
 												 *   and villager[] array
 												 */
-												currentVillager = 0;
 												currentVillage = village.getName();
 											}
 											villageNum++;
@@ -127,7 +125,6 @@ public class WorldUtilities {
 											Villager villager = new Villager(row);
 											world.getBiome()[currentBiomeX][(currentBiomeY % 5) - 1].getVillages().get(currentVillage).
 											getVillager().put(villager.getName(), villager);
-											currentVillager++;
 											break;
 											
 					//Load Animals

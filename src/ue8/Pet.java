@@ -11,8 +11,6 @@ package ue8;
 public abstract class Pet extends Animal implements ISlaughterable, ICatchable{
 	private String name;
 	private Villager owner;
-	private int weight;
-	
 	
 	/**
 	 * Generates Pet object.
