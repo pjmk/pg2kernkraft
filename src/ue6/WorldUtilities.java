@@ -32,7 +32,7 @@ public class WorldUtilities {
 	
 	public World readWorldFromFile(String pathToFile) {
 		try {
-			File datei = new File("input_file/ue3/weltMitBerufen.txt");
+			File datei = new File(pathToFile);
 			Scanner sc = new Scanner(datei);
 			
 			while( sc.hasNextLine() ) {
