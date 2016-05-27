@@ -1,7 +1,5 @@
 package ue6;
 
-import java.util.Iterator;
-
 /**
  * This class generates Cows.
  * 
