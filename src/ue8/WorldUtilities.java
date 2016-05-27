@@ -32,7 +32,7 @@ public class WorldUtilities {
 	
 	public World readWorldFromFile(String pathToFile) {
 		try {
-			File datei = new File(pathToFile);
+			File datei = new File(pathToFile); 
 			Scanner sc = new Scanner(datei);
 			
 			while( sc.hasNextLine() ) {
