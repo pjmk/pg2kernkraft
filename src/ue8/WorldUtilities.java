@@ -100,7 +100,6 @@ public class WorldUtilities {
 											// corrects the index of biome[][y] and village[] array
 											currentBiomeY++;
 											currentVillage = null;
-											System.out.println("current Village in keywords.Biome: " + currentVillage);
 											break;
 					case Keywords.VILLAGE:	// check amount of farmers and doctors
 											if (checkProfession()) {
@@ -114,7 +113,6 @@ public class WorldUtilities {
 												 */
 												currentVillager = 0;
 												currentVillage = village.getName();
-												System.out.println("current Village in keywords.Village: " + currentVillage);
 											}
 											villageNum++;
 											break;
@@ -126,7 +124,6 @@ public class WorldUtilities {
 											 *  the index of villager[] array
 											 */
 											
-											System.out.println("current Village in keywords.VillageR: " + currentVillage);
 											Villager villager = new Villager(row);
 											world.getBiome()[currentBiomeX][(currentBiomeY % 5) - 1].getVillages().get(currentVillage).
 											getVillager().put(villager.getName(), villager);
