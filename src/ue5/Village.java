@@ -121,28 +121,6 @@ public class Village {
 	}
 
 	/**
-	 * Adds exactly one inhabitant to population when called.
-	 * Only increased if population stays less or equal 100 and not less than 0.
-	 */
-
-	private void addInhabitant() {
-		if (isNewPopulationOK(1)) {
-			population++;
-		}
-	}
-
-	/**
-	 * Only increased if population stays less or equal 100 and not less than 0.
-	 * @param amount amount that will be added to village's population
-	 */
-	
-	private void addInhabitant(int amount) {
-		if (isNewPopulationOK(amount)) {
-			population += amount;
-		}
-	}
-
-	/**
 	 * Elects new mayor (Villager) of Village, a default name is used for him/her.
 	 * @return Villager Object of new mayor
 	 */
