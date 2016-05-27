@@ -17,7 +17,7 @@ public class WorldUtilities {
 	private static final int NUM_VILLAGES_OVERALL = 500;
 	private int currentBiomeX;
 	private int currentBiomeY;
-	private int currentVillage;
+	private String currentVillage;
 	private int currentVillager;
 	private static int villageNum;
 	private World world = null;
@@ -99,20 +99,22 @@ public class WorldUtilities {
 											world.getBiome()[currentBiomeX][currentBiomeY] = biome;
 											// corrects the index of biome[][y] and village[] array
 											currentBiomeY++;
-											currentVillage = 0;
+											currentVillage = null;
+											System.out.println("current Village in keywords.Biome: " + currentVillage);
 											break;
 					case Keywords.VILLAGE:	// check amount of farmers and doctors
 											if (checkProfession()) {
 												// creates new village
 												Village village = new Village(row);
 												world.getBiome()[currentBiomeX][currentBiomeY - 1]
-														.getVillage().add(village);
+														.getVillages().put(village.getName(), village);
 												/*
 												 *  corrects the index of village[],villagePopulation[]
 												 *   and villager[] array
 												 */
-												currentVillage++;
 												currentVillager = 0;
+												currentVillage = village.getName();
+												System.out.println("current Village in keywords.Village: " + currentVillage);
 											}
 											villageNum++;
 											break;
@@ -123,8 +125,10 @@ public class WorldUtilities {
 											 * creates new villager, saves it in and corrects
 											 *  the index of villager[] array
 											 */
+											
+											System.out.println("current Village in keywords.VillageR: " + currentVillage);
 											Villager villager = new Villager(row);
-											world.getBiome()[currentBiomeX][(currentBiomeY % 5) - 1].getVillage().get(currentVillage - 1).
+											world.getBiome()[currentBiomeX][(currentBiomeY % 5) - 1].getVillages().get(currentVillage).
 											getVillager().put(villager.getName(), villager);
 											currentVillager++;
 											break;
@@ -190,7 +194,7 @@ public class WorldUtilities {
 					}
 					
 					// loop for village[] array
-					for (Village village: world.getBiome(i, j).getVillage()){
+					for (Village village: world.getBiome(i, j).getVillages().values()){
 						writer.newLine();
 						writer.write(village.toString());			
 

@@ -1,8 +1,10 @@
 package ue8;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 import java.util.NoSuchElementException;
 
 /**
@@ -24,7 +26,7 @@ public class Biome implements Iterable<Village>{
 	 * This guarantees the same sequence every time the world is saved or red.
 	 * Furthermore it is possible to work with indices.
 	 */
-	private List<Village> villageList =  new ArrayList<>();
+	private Map<String, Village> villages =  new HashMap<>();
 	private List<WildAnimal> wildAnimalList =  new ArrayList<>();
 	
 	/**
@@ -70,8 +72,8 @@ public class Biome implements Iterable<Village>{
 	 * @return List Village<Village> saved in Biome (built on Biome)
 	 */
 	
-	public List<Village> getVillage() {
-		return villageList;
+	public Map<String, Village> getVillages() {
+		return villages;
 	}
 
 	/**
@@ -80,7 +82,7 @@ public class Biome implements Iterable<Village>{
 	 */
 	
 	public void addVillage(Village village) {
-		villageList.add(village);
+		villages.put(village.getName(), village);
 	}
 	
 	/**
@@ -107,7 +109,7 @@ public class Biome implements Iterable<Village>{
 	 */
 	
 	public int getAmountVillages() {
-		return villageList.size();
+		return villages.size();
 	}
 	
 	/**
@@ -126,9 +128,9 @@ public class Biome implements Iterable<Village>{
 	public void addWildAnimal(WildAnimal animal) {		
 		wildAnimalList.add(animal);
 	}
-
+	
 	@Override
 	public Iterator<Village> iterator() {
-		return villageList.iterator();
+		return villages.values().iterator();
 	}
 }

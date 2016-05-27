@@ -8,7 +8,7 @@ import java.util.Iterator;
  *
  */
 
-public class KernTest_ue7 {
+public class KernTest_ue8 {
 	public static void main(String[] args) {
 
 		// read world
@@ -16,11 +16,11 @@ public class KernTest_ue7 {
 		World world =  worldutilities.readWorldFromFile("input_file/ue7/weltMitTieren.txt");
 
 		// Save the World again
-		worldutilities.writeWorldToFile(world, "output_file/ue7/weltMitTieren.txt");
+		worldutilities.writeWorldToFile(world, "output_file/ue8/weltMitTieren.txt");
 		
 		// test population
-		System.out.println(world.getBiome(0, 0).getVillage().get(0).getName());
-		System.out.println(world.getBiome(0, 0).getVillage().get(0).getPopulation());
-		System.out.println(world.getBiome(0, 0).getVillage().get(0).getVillager().size());
+		System.out.println(world.getBiome(0, 0).getVillages().get("Kerningen").getName());
+		System.out.println(world.getBiome(0, 0).getVillages().get("Kerningen").getPopulation());
+		System.out.println(world.getBiome(0, 0).getVillages().get("Kerningen").getVillager().size());
 	}
 }
