@@ -18,3 +18,19 @@ VILLAGER : Rudolf Suppenkopf ; GENDER : male ;AGE :36; PROFESSION : Doctor
 VILLAGER : Alma Injuenger ; GENDER : female ;AGE :19; PROFESSION : Unemployed
 VILLAGER : Luca Injuenger ; GENDER : male ;AGE :1; PROFESSION :Kid
 VILLAGER : Franz der Kaiser ; GENDER : male ;AGE :70; PROFESSION : Priest
+BIOME : Biom2 ; NATURE : Jungle
+VILLAGE : Tukumullu ; NUMHOUSES :1; MAYOR : Akina Uballa
+VILLAGER : Rumsa Uballa ; GENDER : male ;AGE :45; PROFESSION : Farmer
+CHICKEN : Lecka ; COLOR : black ; ANIMALAGE :4; OWNER : Rumsa Uballa ; CACKLING :true; NUMEGGS :0
+COW: Jammi ; COLOR : white ; ANIMALAGE :7; OWNER : Rumsa Uballa
+VILLAGER : Akina Uballa ; GENDER : female ;AGE :37; PROFESSION : Doctor
+VILLAGER : Omasa Uballa ; GENDER : male ;AGE :20; PROFESSION : Farmer
+VILLAGER : Rantuna Uballa ; GENDER : female ;AGE :16; PROFESSION :Kid
+BIOME : Biom3 ; NATURE : Desert
+CAMEL : KAMEL1 ; COLOR : brown ; ANIMALAGE :30; FAVNATURE : Desert ; CURRBIOME : Biom3
+CAMEL : KAMEL2 ; COLOR : orange ; ANIMALAGE :7; FAVNATURE : Desert ; CURRBIOME : Biom3
+VILLAGE : Kerningen ; NUMHOUSES :2; MAYOR : Ahmed Yaseri
+VILLAGER : Ahmed Yaseri ; GENDER : male ;AGE :61; PROFESSION : Farmer
+VILLAGER : Abdullah Guenay ; GENDER : male ;AGE :36; PROFESSION : Doctor
+VILLAGER : Aischa Yaseri ; GENDER : female ;AGE :52; PROFESSION : Farmer
+VILLAGER : Aida Guenay ; GENDER : female ;AGE :18; PROFESSION : Doctor
