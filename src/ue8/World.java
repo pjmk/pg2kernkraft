@@ -162,9 +162,8 @@ public class World implements Iterator<Biome> {
 		for (Biome biome : keyset) {
 			// Use biomes as key to get villages with matching names	
 			village = villagesMap.get(biome);
-			if(village != null) {
-				System.out.println("Biome: " + biome.getName() + " has a village called "						+ village.getName() + " with " + village.getPopulation() + " villagers.");
-			}
+				System.out.println("Biome: " + biome.getName() + " has a village called "						
+				+ village.getName() + " with " + village.getPopulation() + " villagers.");
 		}
 	}
 
