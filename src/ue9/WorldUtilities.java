@@ -154,6 +154,7 @@ public class WorldUtilities {
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (ProfessionsException e) {
+			System.out.println("\nTest case for ProfessionsException:\n");
 			e.printStackTrace();
 		}
 		
