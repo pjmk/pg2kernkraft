@@ -70,7 +70,6 @@ public class WorldUtilities {
 			sc.close();
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
-			System.exit(1);
 		} 
 	
 		try {
@@ -154,7 +153,6 @@ public class WorldUtilities {
 			sc.close();
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
-			System.exit(1); 
 		}
 		
 		return world;
