@@ -8,6 +8,7 @@ package ue9;
  */
 
 public class KernTest_ue9 {
+
 	public static void main(String[] args) {
 
 		WorldUtilities worldutilities = new WorldUtilities();
@@ -40,7 +41,7 @@ public class KernTest_ue9 {
 		
 
 	   try {
-		   World world3 = worldutilities.readWorldFromFile("input_file/ue9/welt_Professions_ue9.txt");
+		  World world3 = worldutilities.readWorldFromFile("input_file/ue9/welt_Professions_ue9.txt");
 		} catch (NoSuchKeywordsException e) {
 			e.printStackTrace();
 		}
