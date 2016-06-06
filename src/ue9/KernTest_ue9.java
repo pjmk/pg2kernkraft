@@ -25,6 +25,7 @@ public class KernTest_ue9 {
 		world.logBiomesVillagesByNameToConsole(world.getBiomesVillagesByName("Kerningen"));	
 		
 	} catch (NoSuchKeywordsException e) {
+		//changed first BIOME to BIOMEse in File to check NoSuchKeywordsException
 		System.out.println("\nTest case for NoSuchKeywordsException:\n");
 		e.printStackTrace();
 	}
