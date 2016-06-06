@@ -149,7 +149,7 @@ public class WorldUtilities {
 											new Cow(row, world);
 											break;
 											
-					default:				throw new NoSuchKeywordsException("No Keyword found for" , inputData[0]);
+					default:				throw new NoSuchKeywordsException("No Keyword found for " + inputData[0] , inputData[0]);
 				}
 			}
 			sc.close();

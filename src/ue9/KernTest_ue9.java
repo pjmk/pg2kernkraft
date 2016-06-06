@@ -23,7 +23,6 @@ public class KernTest_ue9 {
 		world.logBiomesVillagesByNameToConsole(world.getBiomesVillagesByName("Kerningen"));	
 		
 	} catch (NoSuchKeywordsException e) {
-		System.out.println("No such keyword: " + e.getKeyword());
 		e.printStackTrace();
 	}
 	
