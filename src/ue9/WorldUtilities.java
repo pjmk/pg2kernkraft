@@ -153,6 +153,8 @@ public class WorldUtilities {
 			sc.close();
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
+		} catch (ProfessionsException e) {
+			e.printStackTrace();
 		}
 		
 		return world;
@@ -249,9 +251,10 @@ public class WorldUtilities {
 	 * Returns true if the amount of farmers and doctor is enough
 	 * for creating new village. Otherwise returns false.   
 	 * @return boolean
+	 * @throws ProfessionsException 
 	 */
 	
-	private boolean checkProfession(){
+	private boolean checkProfession() throws ProfessionsException {
 		/*
 		 * amount of farmers and doctors is saved in villageProffesion[][] array
 		 * short explanation: 
@@ -262,9 +265,9 @@ public class WorldUtilities {
 			return true;
 		else
 			 // Troubleshooting
-		    System.out.println("error: village # " + villageNum + " misses farmes and/or doctors."
+		    throw new ProfessionsException("error: village # " + villageNum + " misses farmes and/or doctors."
 		    		+ "\nfailed to initialize village...");
-		return false;
+	
 	}
 	
 	
