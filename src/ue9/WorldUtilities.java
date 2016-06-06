@@ -1,7 +1,9 @@
 package ue9;
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Scanner;
 
 /**
@@ -65,10 +67,11 @@ public class WorldUtilities {
 				}
 			} 
 			sc.close();
-		} catch (Exception e) {
-			// Troubleshooting
-			System.out.println("Something went wrong, while reading from file and counting population!");
-		}
+		} catch (FileNotFoundException e) {
+			System.out.println("File with path: " + pathToFile + " can't be accessed! Exiting!");
+			e.printStackTrace();
+			System.exit(1);
+		} 
 	
 		try {
 			File datei = new File(pathToFile);
@@ -149,11 +152,12 @@ public class WorldUtilities {
 				}
 			}
 			sc.close();
-		} catch (Exception e) {
-			// Troubleshooting		
-			System.out.println("Something went wrong, while reading the file!: " + e + "\n");
+		} catch (FileNotFoundException e) {
+			System.out.println("File with path: " + pathToFile + " can't be accessed! Exiting!");
 			e.printStackTrace();
+			System.exit(1); 
 		}
+		
 		return world;
 	}
 	
@@ -207,12 +211,11 @@ public class WorldUtilities {
 					}
 				}
 			}
-		writer.close(); 
-		} catch (Exception e){
-			// Troubleshooting
-			System.out.println("Something went wrong, while writing world to file!: " + e);
+			writer.close();
+		} catch (IOException e) {
+			System.out.println("Can't write to " + pathToFile);
 			e.printStackTrace();
-		}	
+		}
 	}
 	
 	/**
