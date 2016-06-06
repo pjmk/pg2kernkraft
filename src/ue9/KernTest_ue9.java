@@ -12,7 +12,7 @@ public class KernTest_ue9 {
 
 		// read world
 		WorldUtilities worldutilities = new WorldUtilities();
-		World world =  worldutilities.readWorldFromFile("input_file/ue10/welt_ue8.txt");
+		World world =  worldutilities.readWorldFromFile("input_file/ue9/welt_ue8.txt");
 
 		// Save the World again
 		worldutilities.writeWorldToFile(world, "output_file/ue9/welt_ue8.txt");

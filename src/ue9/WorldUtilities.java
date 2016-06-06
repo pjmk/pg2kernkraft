@@ -29,9 +29,10 @@ public class WorldUtilities {
 	 * Read World-object from file(format: .txt). 
 	 * @param pathToFile path to file to load
 	 * @return World-object
+	 * @throws NoSuchKeywordsException 
 	 */
 	
-	public World readWorldFromFile(String pathToFile) {
+	public World readWorldFromFile(String pathToFile) throws NoSuchKeywordsException {
 		try {
 			File datei = new File(pathToFile); 
 			Scanner sc = new Scanner(datei);
@@ -148,7 +149,7 @@ public class WorldUtilities {
 											new Cow(row, world);
 											break;
 											
-					default:				System.out.println("No Keyword found for: " + inputData[0]);
+					default:				throw new NoSuchKeywordsException("No Keyword found for" , inputData[0]);
 				}
 			}
 			sc.close();
