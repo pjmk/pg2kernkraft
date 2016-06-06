@@ -40,5 +40,6 @@ public class KernTest_ue9 {
 	}
 	
 	
+	System.out.println("Test end");
 	}
 }
