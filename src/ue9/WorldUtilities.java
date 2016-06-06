@@ -69,7 +69,6 @@ public class WorldUtilities {
 			} 
 			sc.close();
 		} catch (FileNotFoundException e) {
-			System.out.println("File with path: " + pathToFile + " can't be accessed! Exiting!");
 			e.printStackTrace();
 			System.exit(1);
 		} 
@@ -154,7 +153,6 @@ public class WorldUtilities {
 			}
 			sc.close();
 		} catch (FileNotFoundException e) {
-			System.out.println("File with path: " + pathToFile + " can't be accessed! Exiting!");
 			e.printStackTrace();
 			System.exit(1); 
 		}
@@ -214,7 +212,6 @@ public class WorldUtilities {
 			}
 			writer.close();
 		} catch (IOException e) {
-			System.out.println("Can't write to " + pathToFile);
 			e.printStackTrace();
 		}
 	}

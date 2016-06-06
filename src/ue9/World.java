@@ -189,8 +189,7 @@ public class World implements Iterator<Biome> {
 				}
 			}
 		}
-		System.out.println("Could not find Villager: " + name);
-		return null;
+		throw new NoSuchVillagerException("Could not find Villager: " + name);
 	}
 
 	/**

@@ -25,6 +25,18 @@ public class KernTest_ue9 {
 	} catch (NoSuchKeywordsException e) {
 		e.printStackTrace();
 	}
+		
+	// Test case for NoSuchFileException
+	System.out.println("\nTest case for NoSuchFileException:\n");
+	World world;
+	try {
+		world = worldutilities.readWorldFromFile("input_file/ue10/welt_ue8.txt");
+		worldutilities.writeWorldToFile(world, "output_file/ue9/welt_ue8.txt");
+	} catch (NoSuchKeywordsException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+	
 	
 	}
 }
