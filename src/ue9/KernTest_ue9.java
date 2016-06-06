@@ -10,7 +10,6 @@ package ue9;
 public class KernTest_ue9 {
 	public static void main(String[] args) {
 		
-		System.out.println("\nTest case for NoSuchKeywordsException:\n");
 		
 		// read world
 		WorldUtilities worldutilities = new WorldUtilities();
@@ -25,6 +24,7 @@ public class KernTest_ue9 {
 		world.logBiomesVillagesByNameToConsole(world.getBiomesVillagesByName("Kerningen"));	
 		
 	} catch (NoSuchKeywordsException e) {
+		System.out.println("\nTest case for NoSuchKeywordsException:\n");
 		e.printStackTrace();
 	}
 		
