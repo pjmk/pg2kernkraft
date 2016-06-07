@@ -133,19 +133,16 @@ public class World implements Iterator<Biome> {
 	
 	public Map<Biome, Village> getBiomesVillagesByName(String name) {
 		Map<Biome, Village> villagesMap =  new HashMap<>();
-		// Iterate over x-axis 
-		for (int i = 0; i < MAX_NUM_BIOMES; i++) {
-			// Iterate over y-axis
-			for (int k = 0; k < World.getMaxNumBiomes(); k++) {
-				// Iterate over Villages
-				if(this.getBiome(i, k) != null) {
-					for (Village village : this.getBiome(i, k).getVillages().values()) {
+		Biome biomi;
+		// Iterate over Biomes
+		this.resetIndices();
+		while (this.hasNext()) {
+			biomi = this.next();
+					for (Village village : biomi.getVillages().values()) {
 						if(village.getName().equals(name)) {
-						villagesMap.put(this.getBiome(i, k), village);
-						}	
+							villagesMap.put(biomi, village);
+						}
 					}
-				}
-			}
 		}
 		return villagesMap;
 	}
@@ -174,15 +171,13 @@ public class World implements Iterator<Biome> {
 	 */
 	
 	public Villager getVillagerByName(String name) {
-		// Iterate over x-axis
-		for (int i = 0; i < MAX_NUM_BIOMES; i++) {
-			// Iterate over y-axis
-			for (int k = 0; k < World.getMaxNumBiomes(); k++) {
-				if (this.getBiome(i, k) == null) {
-					continue;
-				}
+		Biome biomi;
+		// Iterate over Biomes
+		this.resetIndices();
+		while (this.hasNext()) {
+			biomi = this.next();
 				// Iterate over Villages	
-				for (Village village : this.getBiome(i, k)) {
+				for (Village village : biomi) {
 					//Now get the Villager
 					if (village.getVillager().get(name) == null) {
 						continue;
@@ -191,7 +186,6 @@ public class World implements Iterator<Biome> {
 					}
 				}
 			}
-		}
 		throw new NoSuchVillagerException("Could not find Villager: " + name);
 	}
 

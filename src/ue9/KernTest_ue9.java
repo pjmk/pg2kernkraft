@@ -15,16 +15,25 @@ public class KernTest_ue9 {
 		
 		// PLEASE CHECK TESTCASES SEPERATED BY (UN)COMMENTING
 		
+		// No Exceptions should occur:	
+		try {
+			World world = worldutilities.readWorldFromFile("input_file/ue9/welt_ue9.txt");
+			worldutilities.writeWorldToFile(world, "output_file/ue9/welt_ue9.txt");
+		} catch (NoSuchKeywordsException e) {
+			e.printStackTrace();
+		}
+		
+
 		// Test case for NoSuchKeywordsException:
 		
-		try {
-		worldutilities.readWorldFromFile("input_file/ue9/welt_ue9_keywords_err.txt");
-		
-		} catch (NoSuchKeywordsException e) {
-			//changed first BIOME to BIOMEse in File to check NoSuchKeywordsException
-		System.out.println("\nTest case for NoSuchKeywordsException:\n");
-		e.printStackTrace();
-		}
+//		try {
+//		worldutilities.readWorldFromFile("input_file/ue9/welt_ue9_keywords_err.txt");
+//		
+//		} catch (NoSuchKeywordsException e) {
+//			//changed first BIOME to BIOMEse in File to check NoSuchKeywordsException
+//		System.out.println("\nTest case for NoSuchKeywordsException:\n");
+//		e.printStackTrace();
+//		}
 	
 		
 		
