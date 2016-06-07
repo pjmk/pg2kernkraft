@@ -178,8 +178,11 @@ public class World implements Iterator<Biome> {
 		for (int i = 0; i < MAX_NUM_BIOMES; i++) {
 			// Iterate over y-axis
 			for (int k = 0; k < World.getMaxNumBiomes(); k++) {
+				if (this.getBiome(i, k) == null) {
+					continue;
+				}
 				// Iterate over Villages	
-				for (Village village : this.getBiome(i, k).getVillages().values()) {
+				for (Village village : this.getBiome(i, k)) {
 					//Now get the Villager
 					if (village.getVillager().get(name) == null) {
 						continue;
