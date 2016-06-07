@@ -16,12 +16,12 @@ public class KernTest_ue9 {
 		// PLEASE CHECK TESTCASES SEPERATED BY (UN)COMMENTING
 		
 		// No Exceptions should occur:	
-		try {
-			World world = worldutilities.readWorldFromFile("input_file/ue9/welt_ue9.txt");
-			worldutilities.writeWorldToFile(world, "output_file/ue9/welt_ue9.txt");
-		} catch (NoSuchKeywordsException e) {
-			e.printStackTrace();
-		}
+//		try {
+//			World world = worldutilities.readWorldFromFile("input_file/ue9/welt_ue9.txt");
+//			worldutilities.writeWorldToFile(world, "output_file/ue9/welt_ue9.txt");
+//		} catch (NoSuchKeywordsException e) {
+//			e.printStackTrace();
+//		}
 		
 
 		// Test case for NoSuchKeywordsException:
@@ -64,5 +64,21 @@ public class KernTest_ue9 {
 //	   } catch (NoSuchKeywordsException e) {
 //		   e.printStackTrace();
 //	   }
+		
+		
+		// Test case for NoSuchElementException (unchecked)
+//		World world4;
+//		
+//		try {
+//			world4 = worldutilities.readWorldFromFile("input_file/ue9/welt_ue9.txt");
+//			while (true) {
+//				world4.next(); // Will throw Exception because it is not checked if hasNext() returns true
+//			}
+//		} catch (NoSuchKeywordsException e) {
+//			e.printStackTrace();
+//		}
+		
+		
+		
 	}
 }
