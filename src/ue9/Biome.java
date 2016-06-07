@@ -19,12 +19,6 @@ import java.util.Map;
 public class Biome implements Iterable<Village>{
 	private String name;
 	private Nature nature;
-	/*
-	 * We decided to choose an array list. 
-	 * The main reason is, we wanted a ordered and dynamic data structure.
-	 * This guarantees the same sequence every time the world is saved or red.
-	 * Furthermore it is possible to work with indices.
-	 */
 	private Map<String, Village> villages =  new HashMap<>();
 	private List<WildAnimal> wildAnimalList =  new ArrayList<>();
 	
