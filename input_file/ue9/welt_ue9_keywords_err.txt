@@ -1,5 +1,5 @@
 WORLD:Welt
-BIOME:Biom1;NATURE:Meadows
+BIOMEse:Biom1;NATURE:Meadows
 WOLF:Wolf1;COLOR:gray;ANIMALAGE:5;FAVNATURE:Forest;CURRBIOME:Biom1;RAGEMODE:false
 VILLAGE:Kerningen;NUMHOUSES:2;MAYOR:Fritz Obermotz
 VILLAGER:Alma Suppenkopf;GENDER:female;AGE:35;PROFESSION:Unemployed

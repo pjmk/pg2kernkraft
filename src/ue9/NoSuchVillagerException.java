@@ -5,8 +5,6 @@ package ue9;
  * 
  * @author Paul Jureschek
  * 
- * 
- *
  */
 public class NoSuchVillagerException extends RuntimeException{
 
@@ -19,7 +17,6 @@ public class NoSuchVillagerException extends RuntimeException{
 	 */
 	public NoSuchVillagerException(String message) {
 		super(message);
-		System.out.println();
 	}
 	
 
