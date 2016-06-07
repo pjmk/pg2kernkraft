@@ -1,7 +1,7 @@
 package ue9;
 
 /**
- * Exception to be thrown if Villager Element is not found.
+ * Exception to be thrown if Villager Element is not found. Unchecked Exception.
  * 
  * @author Paul Jureschek
  * 

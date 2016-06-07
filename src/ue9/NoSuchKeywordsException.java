@@ -9,7 +9,7 @@ package ue9;
 
 public class NoSuchKeywordsException extends Exception{
 
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 6577342273995492806L;
 	private String keyword;
 	
 	/**

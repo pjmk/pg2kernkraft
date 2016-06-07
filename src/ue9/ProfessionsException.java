@@ -3,13 +3,13 @@ package ue9;
 /**
  * Exception to be thrown if Biome Element is not found.
  * 
- * @author Michael Kinzkofer
+ * @author Michael Kinzkofer, Paul Jureschek
  * 
  */
 
 public class ProfessionsException extends Exception {
 	
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 8964794084280968103L;
 
 	/**
 	 * Generates new NoSuchBiomeException.

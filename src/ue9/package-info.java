@@ -1,7 +1,4 @@
 /**
- * 
- */
-/**
  * @author Paul Jureschek, Michael Kinzkofer
  *
  */
