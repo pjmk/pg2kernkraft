@@ -29,7 +29,7 @@ public class WorldUtilities {
 	 * Read World-object from file(format: .txt). 
 	 * @param pathToFile path to file to load
 	 * @return World-object
-	 * @throws NoSuchKeywordsException 
+	 * @throws NoSuchKeywordsException if Keyword in file to be read is not known
 	 */
 	
 	public World readWorldFromFile(String pathToFile) throws NoSuchKeywordsException {
